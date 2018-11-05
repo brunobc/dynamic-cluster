@@ -1,0 +1,224 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.6 }
+
+\bibitem[AngularJS 2010]{angularjs}
+\abntrefinfo{AngularJS}{ANGULARJS}{2010}
+{ANGULARJS. \textbf{What Is AngularJS?} 2010.
+Acessado em Outubro. 22, 2018.
+Dispon{\'\i}vel em: \url{https://docs.angularjs.org/guide/introduction}.}
+
+\bibitem[Berkhin 2002]{Berkhin2002}
+\abntrefinfo{Berkhin}{BERKHIN}{2002}
+{BERKHIN, P. \textbf{Survey Of Clustering Data Mining Techniques}.
+San Jose, CA, 2002. Dispon{\'\i}vel em:
+  \url{http://citeseer.ist.psu.edu/berkhin02survey.html}.}
+
+\bibitem[Birant e Kut 2007]{Birant2007STDBSCANAA}
+\abntrefinfo{Birant e Kut}{BIRANT; KUT}{2007}
+{BIRANT, D.; KUT, A. St-dbscan: An algorithm for clustering spatial-temporal
+  data.
+\textbf{Data Knowl. Eng.}, v.~60, p. 208--221, 2007.}
+
+\bibitem[CALIXTO e NEGREIROS 2012]{dynagraph2012}
+\abntrefinfo{CALIXTO e NEGREIROS}{CALIXTO; NEGREIROS}{2012}
+{CALIXTO, A.; NEGREIROS, M. {DYNAGRAPH: Um Modelo de Edição e Representação
+  de Grafos Dinâmicos}.
+1 ed. CLAIO/SBPO, p.~8, 2012.}
+
+\bibitem[CALIXTO e NEGREIROS 2013]{dynagraph}
+\abntrefinfo{CALIXTO e NEGREIROS}{CALIXTO; NEGREIROS}{2013}
+{CALIXTO, A.; NEGREIROS, M.
+\textbf{{DYNAGRAPH: Um Modelo de Edição e Representação de Grafos
+  Dinâmicos}}.
+Disserta\c{c}\~{a}o (Mestrado) --- Mestrado Profissional em Computa\c{c}\~ao
+  Aplicada (MPCOMP), Universidade Estadual do Ceará, 2013.}
+
+\bibitem[ECMA-262 2015]{ecma2015}
+\abntrefinfo{ECMA-262}{ECMA-262}{2015}
+{ECMA-262. \textbf{ECMAScript® 2015 Language Specification}. 2015.
+Acessado em Outubro. 20, 2018.
+Dispon{\'\i}vel em: \url{https://www.ecma-international.org/ecma-262/6.0/}.}
+
+\bibitem[ECMA-404 2018]{json}
+\abntrefinfo{ECMA-404}{ECMA-404}{2018}
+{ECMA-404. \textbf{The JSON Data Interchange Standard}. 2018.
+Acessado em Outubro. 20, 2018.
+Dispon{\'\i}vel em: \url{https://www.json.org/}.}
+
+\bibitem[ESTER \textit{et al.} 1996]{ESTER1996}
+\abntrefinfo{ESTER \textit{et al.}}{ESTER \textit{et al.}}{1996}
+{ESTER, M.; KRIEGEL, H.-P.; SANDER, J.; XU, X. A density-based algorithm for
+  discovering clusters in large spatial databases with noise.
+KDD, v.~96, n.~34, p. 226--231, 1996.}
+
+\bibitem[Ester \textit{et al.} 1998]{ESTER1998}
+\abntrefinfo{Ester \textit{et al.}}{ESTER \textit{et al.}}{1998}
+{ESTER, M.; KRIEGEL, H.-P.; SANDER, J.; WIMMER, M.; XU, X. Incremental
+  clustering for mining in a data warehousing environment. In:
+  \textbf{Proceedings of the 24rd International Conference on Very Large Data
+  Bases}. San Francisco, CA, USA: Morgan Kaufmann Publishers Inc., 1998.  (VLDB
+  '98), p. 323--333.
+ISBN 1-55860-566-5. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=645924.671201}.}
+
+\bibitem[Faghmous e Kumar 2013]{faghmous2013}
+\abntrefinfo{Faghmous e Kumar}{FAGHMOUS; KUMAR}{2013}
+{FAGHMOUS, J.~H.; KUMAR, V. \textbf{Spatio-Temporal Data Mining for Climate
+  Data: Advances, Challenges, and Opportunities}. [S.l.: s.n.], 2013.
+  83-116~p.}
+
+\bibitem[Graham 1972]{ConvexHull}
+\abntrefinfo{Graham}{GRAHAM}{1972}
+{GRAHAM, R.~L. An efficient algorithm for determining the convex hull of a
+  finite planar set.
+\textbf{Inf. Process. Lett.}, v.~1, n.~4, p. 132--133, 1972.}
+
+\bibitem[Guha, Rastogi e Shim 1998]{Guha1998}
+\abntrefinfo{Guha, Rastogi e Shim}{GUHA; RASTOGI; SHIM}{1998}
+{GUHA, S.; RASTOGI, R.; SHIM, K. Cure: An efficient clustering algorithm for
+  large databases.
+\textbf{SIGMOD Rec.}, ACM, New York, NY, USA, v.~27, n.~2, p. 73--84, jun.
+  1998.
+ISSN 0163-5808.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/276305.276312}.}
+
+\bibitem[HOLME 2015]{holme:colloquium}
+\abntrefinfo{HOLME}{HOLME}{2015}
+{HOLME, P. {Modern temporal network theory: a colloquium}.
+\textbf{The European Physical Journal B}, v.~88, n.~9, p.~1, 2015.}
+
+\bibitem[Kaufmann e Rousseeuw 1990]{kaufmann1990}
+\abntrefinfo{Kaufmann e Rousseeuw}{KAUFMANN; ROUSSEEUW}{1990}
+{KAUFMANN, L.; ROUSSEEUW, P.~J. \textbf{Finding Groups in Data: An Introduction
+  to Cluster Analysis}. [S.l.]: John Wiley and Sons, 1990.}
+
+\bibitem[KIM e ANDERSON 2012]{kim}
+\abntrefinfo{KIM e ANDERSON}{KIM; ANDERSON}{2012}
+{KIM, H.; ANDERSON, R. {Temporal node centrality in complex networks}.
+1 ed. PHYSICAL REVIEW, p.~8, 2012.}
+
+\bibitem[KOSTAKOS 2009]{kostakos}
+\abntrefinfo{KOSTAKOS}{KOSTAKOS}{2009}
+{KOSTAKOS, V. {Temporal graphs}.
+\textbf{Physica A}, p. 1007--1023, 2009.}
+
+\bibitem[LAHIRI e BERGER-WOLF 2007]{lahiri2007}
+\abntrefinfo{LAHIRI e BERGER-WOLF}{LAHIRI; BERGER-WOLF}{2007}
+{LAHIRI, M.; BERGER-WOLF, T. Structure prediction in temporal networks using
+  frequent subgraphs.
+IEEE Symposium on Computational Intelligence and Data Mining, p. 35--42, 2007.}
+
+\bibitem[LAHIRI e BERGER-WOLF 2008]{lahiri2008}
+\abntrefinfo{LAHIRI e BERGER-WOLF}{LAHIRI; BERGER-WOLF}{2008}
+{LAHIRI, M.; BERGER-WOLF, T. Mining periodic behavior in dynamic social
+  networks.
+Eighth IEEE International Conference on Data Mining, 2008.}
+
+\bibitem[Lin \textit{et al.} 2004]{Lin2004}
+\abntrefinfo{Lin \textit{et al.}}{LIN \textit{et al.}}{2004}
+{LIN, J.; VLACHOS, M.; KEOGH, E.; GUNOPULOS, D. Iterative incremental
+  clustering of time series. In:  BERTINO, E.; CHRISTODOULAKIS, S.;
+  PLEXOUSAKIS, D.; CHRISTOPHIDES, V.; KOUBARAKIS, M.; B{\"O}HM, K.; FERRARI, E.
+  (Ed.). \textbf{Advances in Database Technology - EDBT 2004}. Berlin,
+  Heidelberg: Springer Berlin Heidelberg, 2004. p. 106--122.}
+
+\bibitem[Macqueen 1967]{Macqueen67}
+\abntrefinfo{Macqueen}{MACQUEEN}{1967}
+{MACQUEEN, J. Some methods for classification and analysis of multivariate
+  observations. In:  \textbf{In 5-th Berkeley Symposium on Mathematical
+  Statistics and Probability}. [S.l.: s.n.], 1967. p. 281--297.}
+
+\bibitem[Maps 2018]{markerCluster}
+\abntrefinfo{Maps}{MAPS}{2018}
+{MAPS, G. \textbf{Marker Clustering}. 2018.
+Acessado em Outubro. 14, 2018.
+Dispon{\'\i}vel em:
+  \url{https://developers.google.com/maps/documentation/javascript/marker-clustering}.}
+
+\bibitem[Mitsa 2010]{Mitsa:2010}
+\abntrefinfo{Mitsa}{MITSA}{2010}
+{MITSA, T. \textbf{Temporal Data Mining}. 1st. ed. [S.l.]: Chapman \& Hall/CRC,
+  2010.
+ISBN 1420089765, 9781420089769.}
+
+\bibitem[Sheikholeslami, Chatterjee e Zhang 1998]{Sheikholeslami1998}
+\abntrefinfo{Sheikholeslami, Chatterjee e Zhang}{SHEIKHOLESLAMI; CHATTERJEE;
+  ZHANG}{1998}
+{SHEIKHOLESLAMI, G.; CHATTERJEE, S.; ZHANG, A. Wavecluster: A multi-resolution
+  clustering approach for very large spatial databases. In:
+  \textbf{Proceedings of the 24rd International Conference on Very Large Data
+  Bases}. San Francisco, CA, USA: Morgan Kaufmann Publishers Inc., 1998.  (VLDB
+  '98), p. 428--439.
+ISBN 1-55860-566-5. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=645924.671342}.}
+
+\bibitem[SIMDA 2018]{simda}
+\abntrefinfo{SIMDA}{SIMDA}{2018}
+{SIMDA. \textbf{Sistema de Monitoramento Diário de Agravos}. 2018.
+Acessado em Julho. 24, 2018.
+Dispon{\'\i}vel em: \url{http://tc1.sms.fortaleza.ce.gov.br/simda/index/}.}
+
+\bibitem[Tomaz 2009]{alfredo2009}
+\abntrefinfo{Tomaz}{TOMAZ}{2009}
+{TOMAZ, A.~P.
+\textbf{{Encontrando Similaridades entre Indivíduos Através de Métodos de
+  Agrupamento Natural}}.
+Disserta\c{c}\~{a}o (Mestrado) --- Universidade Estadual do Ceará, 2009.}
+
+\bibitem[VIANA e Negreiros 2003]{simposioNeg2003}
+\abntrefinfo{VIANA e Negreiros}{VIANA; NEGREIROS}{2003}
+{VIANA, J. F.~R.; NEGREIROS, M. {Um Algoritmo Polinomial para Identificação
+  de Grupos Naturais em Longas Bases de Dados}. In:  \textbf{XXXV Simpósio
+  Brasileiro de Pesquisa Operacional}. [S.l.]: Natal, 2003.}
+
+\bibitem[W3SCHOOLS 2018]{css}
+\abntrefinfo{W3SCHOOLS}{W3SCHOOLS}{2018}
+{W3SCHOOLS. \textbf{CSS Introduction}. 2018.
+Acessado em Outubro. 20, 2018.
+Dispon{\'\i}vel em: \url{https://www.w3schools.com/css/css\_intro.asp}.}
+
+\bibitem[w3schools 2018]{html}
+\abntrefinfo{w3schools}{W3SCHOOLS}{2018}
+{W3SCHOOLS. \textbf{HTML Introduction}. 2018.
+Acessado em Outubro. 20, 2018.
+Dispon{\'\i}vel em: \url{https://www.w3schools.com/html/html\_intro.asp}.}
+
+\bibitem[Wang, Yang e Muntz 1997]{Wang1997}
+\abntrefinfo{Wang, Yang e Muntz}{WANG; YANG; MUNTZ}{1997}
+{WANG, W.; YANG, J.; MUNTZ, R.~R. Sting: A statistical information grid
+  approach to spatial data mining. In:  \textbf{Proceedings of the 23rd
+  International Conference on Very Large Data Bases}. San Francisco, CA, USA:
+  Morgan Kaufmann Publishers Inc., 1997.  (VLDB '97), p. 186--195.
+ISBN 1-55860-470-7. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=645923.758369}.}
+
+\bibitem[Wu \textit{et al.} 2008]{Wu2008}
+\abntrefinfo{Wu \textit{et al.}}{WU \textit{et al.}}{2008}
+{WU, X.; KUMAR, V.; QUINLAN, J. R.; GHOSH, J.; YANG, Q.; MOTODA, H.; MCLACHLAN,
+  G.~J.; NG, A.; LIU, B.; YU, P.~S.; ZHOU, Z.-H.; STEINBACH, M.; HAND, D.~J.;
+  STEINBERG, D. Top 10 algorithms in data mining.
+\textbf{Knowledge and Information Systems}, v.~14, n.~1, p. 1--37, Jan 2008.}
+
+\bibitem[Yip, Ding e Chan 2005]{yip2005}
+\abntrefinfo{Yip, Ding e Chan}{YIP; DING; CHAN}{2005}
+{YIP, A.~M.; DING, C.; CHAN, T.~F. Dynamic cluster formation using level set
+  methods. In:  \textbf{Proceedings of the 9th Pacific-Asia Conference on
+  Advances in Knowledge Discovery and Data Mining}. Berlin, Heidelberg:
+  Springer-Verlag, 2005.  (PAKDD'05), p. 388--398.
+ISBN 3-540-26076-5, 978-3-540-26076-9. Dispon{\'\i}vel em:
+  \url{http://dx.doi.org/10.1007/11430919\_46}.}
+
+\bibitem[Zhang, Ramakrishnan e Livny 1996]{Zhang1996}
+\abntrefinfo{Zhang, Ramakrishnan e Livny}{ZHANG; RAMAKRISHNAN; LIVNY}{1996}
+{ZHANG, T.; RAMAKRISHNAN, R.; LIVNY, M. Birch: An efficient data clustering
+  method for very large databases.
+\textbf{SIGMOD Rec.}, ACM, New York, NY, USA, v.~25, n.~2, p. 103--114, jun.
+  1996.
+ISSN 0163-5808.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/235968.233324}.}
+
+\end{thebibliography}
