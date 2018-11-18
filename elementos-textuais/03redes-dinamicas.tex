@@ -8,24 +8,22 @@
 
 \subsection{Agrupamento de dados baseado em predição}
 %Temporal Data Mining [Mitsa]
-A tarefa de predição visa descobrir o valor futuro de um determinado atributo de dados. É uma área com variedade de aplicações em diversas áreas como meteorologia e detecção de doenças. Por exemplo, um médico gostaria de prever a reação de seus pacientes a um novo medicamento para diabetes, particularmente a duração dos episódios de hipoglicemia.
+A tarefa de predição visa descobrir o valor futuro de um determinado atributo de dados. É uma área com variedade de aplicações em diversas campos do conhecimento como meteorologia e detecção de doenças. Por exemplo, um médico gostaria de prever a reação de seus pacientes a um novo medicamento para diabetes, particularmente a duração dos episódios de hipoglicemia.
 Na previsão de eventos, é desejável prever a ocorrência de um evento ou o número de ocorrências de um evento ou a duração de um evento, dada a existência de certas condições. Por exemplo, um médico acaba de colocar um de seus pacientes epilépticos em uma nova droga que é muito eficaz, mas após o início da terapia pode causar um grave ataque de enxaqueca. O médico gostaria de prever a duração desse ataque, considerando o conhecimento sobre a idade do paciente e o número e duração dos ataques epilépticos no último ano. Nos problemas de previsão de eventos que lidam com a previsão da duração de um evento pode ser modelada usando uma variável contínua e pode-se usar a regressão linear para sua previsão, onde a regressão linear é um dos métodos de regressão mais amplamente disponíveis \cite{Mitsa:2010}.
-Na previsão de séries temporais, os dados são dados históricos obtidos em intervalos de tempo regulares. Informações sobre padrões passados podem ser usadas para prever padrões futuros. No exemplo da enxaqueca, os dados poderiam ser a duração dos ataques de enxaqueca de outros pacientes sobre a droga, juntamente com informações sobre suas idades, condições médicas preexistentes e gravidade da epilepsia.
+Na previsão de séries temporais, os dados são informações históricas obtidas em intervalos de tempo regulares. Informações sobre padrões passados podem ser usadas para prever padrões futuros. No exemplo da enxaqueca, os dados poderiam ser a duração dos ataques de enxaqueca de outros pacientes sobre a droga, juntamente com informações sobre suas idades, condições médicas preexistentes e gravidade da epilepsia.
 
 TODO -- criar subsections 
 \subsection{Método lahiri}
 \label{lahiri}
-\cite{lahiri2007} apresentam um algoritmo de predição em redes temporais, e que usa a ideia de que certas
-interações sinalizam a ocorrência de outros em algum momento no futuro. Através de análises estatísticas
-o algoritmo mede o atraso entre as interações, e com isso pode-se prever quando certas interações vão ocorrer
-com base em observações passadas e atuais. Propõe-se a utilização de subgrafos frequentes e discute
-como identificar subgrafos que são persistidos em redes temporais.
-\cite{lahiri2008} em seguida propõe um novo problema de mineração de dados para redes dinâmicas:
-detecção de todos os padrões de interação que ocorrem em intervalos de tempo regulares.
+\cite{lahiri2007} apresentam um algoritmo de predição em redes temporais, e que usa a ideia de que certas interações sinalizam a ocorrência de outros em algum momento no futuro. Através de análises estatísticas o algoritmo mede o atraso entre as interações, e com isso pode-se prever quando certas interações vão ocorrer com base em observações passadas e atuais. Propõe-se a utilização de subgrafos frequentes e discute como identificar subgrafos que persistem em redes temporais. 
+
+\cite{lahiri2008} em seguida propõe um novo problema de mineração de dados para redes dinâmicas: detecção de todos os padrões de interação que ocorrem em intervalos de tempo regulares.
  
 \subsection{O modelo Dynagraph}
 
-O Dynagraph \cite{dynagraph} é um modelo computacional que permite, a partir de uma estrutura de dados simples, modelo de um Grafo ou Rede Dinâmica, representar com o mínimo custo de armazenamento a evolução de uma instância de observação e estudos. Ele acompanha a evolução dos conjuntos de um grafo: de nós e ligações (arcos e elos), como inserção/retirada ao longo do tempo, e mudança de suas características (posição, cor, forma, tamanho, e outras), por meio de um editor de características, apresentado na próxima subseção.
+O Dynagraph \cite{dynagraph} é um modelo computacional que permite, a partir de uma estrutura de dados simples, modelo de um Grafo ou Rede Dinâmica, representar com o mínimo custo de armazenamento a evolução de uma instância de observação e estudos. Ele acompanha a evolução dos conjuntos de um grafo: de nós e ligações (arcos e elos), como inserção/retirada ao longo do tempo, e mudança de suas características (posição, cor, forma, tamanho, e outras), por meio de um editor de características.
+
+Trata-se de um poderoso instrumento de visualização e representação de eventos discretos espaço-temporais em mapas geográficos bidimensionais, que permite incorporar recursos de agrupamentos, predições e previsões de eventos que são discretizados numa determinada medida de intervalos temporais (segundos, minutos, horas, dias, semanas, decêndios, quinzenas, meses, anos).
 
 \subsubsection{Estrutura de dados}
 
@@ -129,7 +127,7 @@ Para editar um tipo de vértice basta selecioná-lo a partir da lista de tipos d
 \end{figure}
 \FloatBarrier
 
-Outra opção de edição de um vértice é dado na figura \ref{fig:edCaractEditVerticeOption2}. Nesta opção pode-se usar uma imagem pronta.
+Outra opção de edição de um vértice é dada na figura \ref{fig:edCaractEditVerticeOption2}. Nesta opção pode-se usar uma imagem pronta.
 \begin{figure}[!ht]
 	\centering	
 	\Caption{\label{fig:edCaractEditVerticeOption2} Editor de Características: Tipo de vértice}	
@@ -155,9 +153,9 @@ O Editor de Características permite também a criação e edição de arestas (
 
 \subsection{Visualização dos grupos formados}
 Foram usados dois algoritmos para permitir a visualização dos grupos formados em um dado tempo.
-O primeiro é uma biblioteca da API do Google chamada MarkerClusterer \cite{markerCluster} que cria e gerencia grupos de acordo com o nível de zoom para grandes quantidades de pontos.
-Essa biblioteca é combinada com a API Javascript do Google Maps para agrupar os pontos por proximidade em grupos e simplificar a exibição dos pontos no mapa.
-De acordo com o nível de zoom os grupos são formados com cores e tamanhos diferentes, como mostra as figuras \ref{fig:apiGoogleMaps1} e \ref{fig:apiGoogleMaps2}.
+O primeiro é uma biblioteca da API do Google chamada MarkerClusterer \cite{markerCluster} que cria e gerencia grupos de acordo com o nível de \textit{zoom} para grandes quantidades de pontos.
+Essa biblioteca é combinada com a API Javascript do Google Maps$^{TM}$ para agrupar os pontos por proximidade e simplificar a exibição dos pontos no mapa.
+De acordo com o nível de \textit{zoom} os grupos são formados com cores e tamanhos diferentes, como mostram as figuras \ref{fig:apiGoogleMaps1} e \ref{fig:apiGoogleMaps2}.
 \begin{figure}[!ht]
 	\centering	
 	\Caption{\label{fig:apiGoogleMaps1} Grupos - API Google Maps parte 1}	
@@ -180,9 +178,8 @@ De acordo com o nível de zoom os grupos são formados com cores e tamanhos dife
 \end{figure}
 \FloatBarrier
 
-O segundo algoritmo é conhecido como Convex Hull \cite{ConvexHull}. Também conhecido como fecho convexo onde, dado um conjunto de pontos em um espaço,
-o problema consiste em encontrar o menor número de pontos que gerem um polígono convexo no qual abranja todos os outros pontos.
-As figuras \ref{fig:algConvexHull1} e \ref{fig:algConvexHull2} são exemplos do convex hull, onde cada polígono representa o grupo de casos de dengue naquela região delimitada. Dos vários pontos, somente os pontos mais externos e que formam o menor polígono que englobam todos os outros pontos.
+O segundo algoritmo é conhecido como Convex Hull \cite{ConvexHull}. Também denominado de fecho convexo. No problema é dado um conjunto de pontos em um espaço, e deseja-se encontrar o menor número de pontos que geram um polígono convexo no qual abranja todos os outros pontos.
+As figuras \ref{fig:algConvexHull1} e \ref{fig:algConvexHull2} apresentam exemplos do \emph{convex hull}, onde cada polígono representa o grupo de casos de dengue naquela região delimitada. Dos vários pontos, somente os pontos mais externos e que formam o menor polígono que engloba todos os outros pontos.
 %
 \begin{figure}[!ht]
 	\centering	
