@@ -1,24 +1,54 @@
 \section{Redes dinâmicas}
  \label{chap:redes-dinamicas}
+ % Clustering Dynamic Spatio-Temporal Patterns in the Presence of Noise and Missing Data: https://www.ijcai.org/Proceedings/15/Papers/365.pdf
+ %TODO --- Introduzir o processo de previsão de agrupamentos espaço temporais ---
  
- TODO --- Introduzir o processo de previsão de agrupamentos espaço temporais e sugira dois métodos básicos de previsão: Usar o livro Mitsa (2010) pagina 105 (clsutering of Time Series Data Steams, Time Series Clustering Using Global Characteristics. Mostre como cada um funciona com um exemplo. Vá nos artigos que apresentam estes métodos---
+Para redes dinâmicas, o foco é tipicamente em uma classe de redes e questões referentes às estrutura dessa classe de rede, como a estrutura evoluiu e como isso afeta sistemas dinâmicos na rede. As redes temporais normalmente são mais orientadas a dados - onde se investiga um conjunto de dados, suas estruturas e como, por exemplo, surtos epidêmicos se comportariam sobre ele \cite{holme:colloquium}.
 
- 
- Para redes dinâmicas, o foco é tipicamente em uma classe de redes e questões referentes às estrutura dessa classe de rede, como a estrutura evoluiu e como isso afeta sistemas dinâmicos na rede. As redes temporais normalmente são mais orientadas a dados - onde se investiga um conjunto de dados, suas estruturas e como, por exemplo, surtos epidêmicos se comportariam sobre ele. Em seguida, é questionado como essas observações se generalizam comparando os resultados para diferentes conjuntos de dados \cite{holme:colloquium}.
+Uma observação sobre endemias é que casos e focos destes tendem a estar mais próximos do que distantes no espaço e no tempo. Por exemplo, o casos de dengue de amanhã tem mais probabilidade de serem semelhantes aos casos de hoje do que de um mês atrás ou mais. Da mesma forma, os casos num raio de 300 metros tendem a ser mais semelhantes do que os casos a 10 quilômetros ou mais de distância. Estas observações são referidas como dependência temporal e espacial.
+
+\subsection{Previsão e Predição Espaço-Temporal}
+A aceitação de modelos espaço-temporais tem sido tradicionalmente limitada pela escassez de conjuntos de dados espaço-temporais em grande escala \cite{Griffith2010}. Essa situação foi revertida nas últimas décadas e com grande quantidade de dados exige-se métodos rápidos e eficazes para lidar com eles. Os modelos espaço-temporais 
+podem ser divididos em duas categorias: métodos estatísticos ou paramétricos e métodos de aprendizagem de máquina ou não-paramétricos.
+
 
 \subsection{Agrupamento de dados baseado em predição}
-%Temporal Data Mining [Mitsa]
+
 A tarefa de predição visa descobrir o valor futuro de um determinado atributo de dados. É uma área com variedade de aplicações em diversas campos do conhecimento como meteorologia e detecção de doenças. Por exemplo, um médico gostaria de prever a reação de seus pacientes a um novo medicamento para diabetes, particularmente a duração dos episódios de hipoglicemia.
 Na previsão de eventos, é desejável prever a ocorrência de um evento ou o número de ocorrências de um evento ou a duração de um evento, dada a existência de certas condições. Por exemplo, um médico acaba de colocar um de seus pacientes epilépticos em uma nova droga que é muito eficaz, mas após o início da terapia pode causar um grave ataque de enxaqueca. O médico gostaria de prever a duração desse ataque, considerando o conhecimento sobre a idade do paciente e o número e duração dos ataques epilépticos no último ano. Nos problemas de previsão de eventos que lidam com a previsão da duração de um evento pode ser modelada usando uma variável contínua e pode-se usar a regressão linear para sua previsão, onde a regressão linear é um dos métodos de regressão mais amplamente disponíveis \cite{Mitsa:2010}.
 Na previsão de séries temporais, os dados são informações históricas obtidas em intervalos de tempo regulares. Informações sobre padrões passados podem ser usadas para prever padrões futuros. No exemplo da enxaqueca, os dados poderiam ser a duração dos ataques de enxaqueca de outros pacientes sobre a droga, juntamente com informações sobre suas idades, condições médicas preexistentes e gravidade da epilepsia.
 
-TODO -- criar subsections 
-\subsection{Método lahiri}
+\subsection{Método de lahiri}
 \label{lahiri}
-\cite{lahiri2007} apresentam um algoritmo de predição em redes temporais, e que usa a ideia de que certas interações sinalizam a ocorrência de outros em algum momento no futuro. Através de análises estatísticas o algoritmo mede o atraso entre as interações, e com isso pode-se prever quando certas interações vão ocorrer com base em observações passadas e atuais. Propõe-se a utilização de subgrafos frequentes e discute como identificar subgrafos que persistem em redes temporais. 
+\cite{lahiri2007} apresentam um algoritmo de predição em redes temporais, e que usa a ideia de que certas interações sinalizam a ocorrência de outros em algum momento no futuro. Através de análises estatísticas o algoritmo mede o atraso entre as interações, e com isso pode-se prever quando certas interações vão ocorrer com base em observações passadas e atuais. Propõe-se a utilização de subgrafos frequentes e discute como identificar subgrafos que persistem em redes temporais.
 
 \cite{lahiri2008} em seguida propõe um novo problema de mineração de dados para redes dinâmicas: detecção de todos os padrões de interação que ocorrem em intervalos de tempo regulares.
- 
+
+\subsection{TODO - Clustering of Time Series Data Streams}
+[Rod08]
+Rodrigues, P.P., J. Gama, and J.P. Pedroso, Hierarchical Clustering of Time Series Data Streams, IEEE Transactions on Knowledge and Data Engineering, vol. 20, no. 5, pp. 615–627, 2008.
+
+[Agg03]
+Aggarwal, C.C, J. Han, and P.S. Yu, A Framework for Clustering Evolving Data Streams, Proceedings of VLDB, pp. 81–92, 2003.
+
+[Guh03]
+Guha, S. et al., Clustering Data Streams: Theory and Practice, IEEE TKDE, vol. 15, no. 3, pp. 515–528, 2003.
+
+
+\subsection{TODO - Time Series Clustering Using Global Characteristics}
+% [Wan05]
+% Wang, X., K.A. Smith, and R.J. Hyndman, Dimension Reduction for Clustering Time Series Using Global Characteristics, Lecture Notes on Computer Science 3516, pp. 792–795, 2005.
+% https://www.researchgate.net/publication/220857979_Dimension_Reduction_for_Clustering_Time_Series_Using_Global_Characteristics
+
+% [Wan06] Não disponível
+% Wang, X., K.A. Smith, and R.J. Hyndman, Characteristic-Based Clustering for Time Series Data, Data Mining and Knowledge Discovery, vol. 13, % pp. 335–364, 2006.
+
+% [Atk00] Não disponível
+% Atkinson, A.C. and M. Riani, Robust Diagnostic Regression Analysis, Springer, 2000.
+% https://www.springer.com/br/book/9780387950174
+
+%TODO -- procurar em Spatio-Temporal Data Mining: A Survey of Problems and Methods: https://arxiv.org/pdf/1711.04710.pdf
+
 \subsection{O modelo Dynagraph}
 
 O Dynagraph \cite{dynagraph} é um modelo computacional que permite, a partir de uma estrutura de dados simples, modelo de um Grafo ou Rede Dinâmica, representar com o mínimo custo de armazenamento a evolução de uma instância de observação e estudos. Ele acompanha a evolução dos conjuntos de um grafo: de nós e ligações (arcos e elos), como inserção/retirada ao longo do tempo, e mudança de suas características (posição, cor, forma, tamanho, e outras), por meio de um editor de características.
@@ -27,9 +57,43 @@ Trata-se de um poderoso instrumento de visualização e representação de event
 
 \subsubsection{Estrutura de dados}
 
-(TODO - anexar imagem da estrutura JSON usada pelo Dynagraph)
+A estrutura de dados usada no Dynagraph segue a Notação de Objeto Javascript (JSON), que é um formato de texto de intercâmbio de dados \cite{douglas}.
+A figura \ref{fig:jsondynagraph} mostra como é essa estrutura seguindo três objetos principais: ``metadata'', ``binding'' e ``data''.
 
-\subsection{Editor de características}
+Em ``metadata'' são definidos os campos para utilização de qualquer identificador, por exemplo é possível utilizar ``ini'' e ``fim'',
+que representam o tempo inicial e final de um elemento, no lugar de ``start'' e ``end'' respectivamente.
+
+Na figura \ref{fig:jsondynagraph}, em ``binding'' são definidas as características dos vértices e arestas.
+Seguindo o exemplo da mesma figura, ``vertex'' poderá
+ser do tipo ``v1'', ``v2'' e ``v3'', onde cada tipo contém informações da forma do vértice. Essa forma pode ser uma imagem no formato
+``png'' ou ``jpg'' ou customizada com as seguintes características:
+\begin{itemize}
+\item path: círculo ou seta;
+\item fillColor: cor do preenchimento;
+\item strokeColor: cor da borda;
+\item fillOpacity: opacidade;
+\item scale: tamanho;
+\item strokeWeight: espessura da borda.
+\end{itemize}
+A aresta, ou ``polyline'', segue uma estrutura semelhante à do ``vertex'', porém com algumas particularidades como repetição de um símbolo
+ao longo da aresta, e uma customização no campo ``path'' seguindo a notação
+SVG\footnote{\label{note} Scalable Vector Graphics - é uma forma de descrever de forma vetorial desenhos e gráficos bidimensionais}.
+
+Em ``data'' são definidos os elementos do grafo, os tempos de início e fim de cada elemento ou tempo de existência.
+No caso dos vértices, a posição de cada elemento pode ser escrita no formato UTM ou latitude e longitude.
+O tipo de cada elemento, descrito em ``binding'', e no caso das arestas, são definidos os pontos de origem e destino.
+
+Na figura \ref{fig:jsondynagraph} vemos a estrutura de construção de um grafo dinâmico.
+Os campos ``metadata'' e ``binding'' foram omitidos para evidenciar o objeto ``data''.
+\FloatBarrier
+\lstinputlisting[language=Java, basicstyle=\tiny]{figuras/new.json}
+\begin{figure}[htbp]
+  \caption{Estrutura JSON usada pelo Dynagraph}
+  \label{fig:jsondynagraph}
+\end{figure}
+
+
+\subsubsection{Editor de características}
 O Editor de Características é uma extensão do software Dynagraph, que permite alterar os atributos visuais dos vértices e aresta de um grafo dinâmico.
 Com ele pode-se criar novos tipos de dados e com isso diferenciar, por exemplo, focos de casos de dengue e tipos de dengue.
 Essa extensão permite criar com os seguintes atributos: Rótulo, Opacidade, Escala, Espessura da Borda, Cor da Borda e Cor de Preenchimento. Outra opção é utilizar uma imagem.
@@ -151,7 +215,7 @@ O Editor de Características permite também a criação e edição de arestas (
 \end{figure}
 \FloatBarrier
 
-\subsection{Visualização dos grupos formados}
+\subsubsection{Visualização dos grupos formados}
 Foram usados dois algoritmos para permitir a visualização dos grupos formados em um dado tempo.
 O primeiro é uma biblioteca da API do Google chamada MarkerClusterer \cite{markerCluster} que cria e gerencia grupos de acordo com o nível de \textit{zoom} para grandes quantidades de pontos.
 Essa biblioteca é combinada com a API Javascript do Google Maps$^{TM}$ para agrupar os pontos por proximidade e simplificar a exibição dos pontos no mapa.
@@ -179,7 +243,7 @@ De acordo com o nível de \textit{zoom} os grupos são formados com cores e tama
 \FloatBarrier
 
 O segundo algoritmo é conhecido como Convex Hull \cite{ConvexHull}. Também denominado de fecho convexo. No problema é dado um conjunto de pontos em um espaço, e deseja-se encontrar o menor número de pontos que geram um polígono convexo no qual abranja todos os outros pontos.
-As figuras \ref{fig:algConvexHull1} e \ref{fig:algConvexHull2} apresentam exemplos do \emph{convex hull}, onde cada polígono representa o grupo de casos de dengue naquela região delimitada. Dos vários pontos, somente os pontos mais externos e que formam o menor polígono que engloba todos os outros pontos.
+As figuras \ref{fig:algConvexHull1} e \ref{fig:algConvexHull2} apresentam exemplos do \emph{convex hull}, onde cada polígono representa o grupo de casos de dengue naquela região delimitada. Dos vários pontos, somente os pontos mais externos é que formam o menor polígono que engloba todos os outros pontos.
 %
 \begin{figure}[!ht]
 	\centering	
