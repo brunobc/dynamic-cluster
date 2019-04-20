@@ -1,10 +1,12 @@
-\chapter{Modelo de agrupamento e previsão em redes dinâmicas}
+\chapter{Modelos de agrupamento e previsão em redes dinâmicas}
 \label{chap:modelo-agrupamento}
 
-TODO - Apresentar método simples de previsão baseado nos clusters anteriores (centro e raio).
+\section{Modelo de previsão baseado nos clusters anteriores (centro e raio)}
+
+Este modelo gera grupos de previsão baseados no histórico dos grupos, nos centros geométricos dos grupos em análise e no raio de acordo com a média do número de casos de dengue de cada grupo.
 
 As figuras \ref{fig:stdbscan1}, \ref{fig:stdbscan2} e \ref{fig:stdbscan3} exibem os grupos formados pelo ST-DBSCAN, onde os dados tomados de exemplo são casos de dengue de janeiro de 2017.
-A figura \ref{fig:stdbscan3} exibe também os grupos de predição formados pelo grupo 55 e 57. Estes grupos são gerados baseados nos centros geométricos dos grupos em análise e o raio de acordo com a média do número de casos de dengue de cada grupo.
+A figura \ref{fig:stdbscan3} exibe também os grupos de predição formados pelo grupo 55 e 57.
 
 \begin{figure}[!ht]
 	\centering	

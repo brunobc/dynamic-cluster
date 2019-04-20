@@ -1,5 +1,5 @@
 \section{Trabalhos Relacionados}
-\label{chap:trabalhos-relacionados}
+\label{sec:trabalhos-relacionados}
 
 % TODO: melhorar este capítulo
 Como há uma carência de estudos relacionando os assuntos abordados: agrupamento, previsão em dados dinâmicos espaço-temporais, grafos dinâmicos e sistemas web de forma integrada, foi necessário dividir o problema de agrupamentos e previsões dinâmicos em três etapas:
@@ -11,12 +11,9 @@ Como há uma carência de estudos relacionando os assuntos abordados: agrupament
 
 A pesquisa aborda a estrutura de dados em grafos dinâmicos usando passos já descritos na literatura, principalmente o modelo Dynagraph \cite{dynagraph}, que é baseado na primeira proposta em \cite{dynagraph2012}, onde o Dynagraph usa sequências temporais para vértices, arestas, características modificáveis dos vértices e arestas e o relacionamento entre suas características. Ele permite formar um grafo com as informações necessárias para qualquer instante no tempo. Com o Dynagraph é possível visualizar o comportamento do grafo ao longo de um período de tempo, verificar o estado de cada objeto a qualquer tempo e editá-lo.
 
-A ideia central de \cite{kim} é modelar uma rede dinâmica como digrafos orientados ao tempo (\textit{time-ordered graph}), que é gerada através da ligação de instantes temporais com arestas direcionadas que unem cada nó ao seu sucessor no tempo. Com isso, transformar uma rede dinâmica em um grafo maior, mas facilmente analisável é bem mais prático de ser feito usando este tipo de ferramenta. Isto permite não só a utilização dos algoritmos 
-desenvolvidos para grafos estáticos, mas também para melhor definir métricas para grafos dinâmicos. 
+O algoritmo de agrupamento dinâmico ST-DBSCAN tem como base o algoritmo DBSCAN, e tem a capacidade de descobrir
+agrupamentos de acordo com valores não espaciais, espaciais e temporais dos objetos. Com ele é possível descobrir grupos em dados espaciais-temporais.
 
-Segundo \cite{kim} um sistema de grafos dinâmicos é um objeto de representação visual que pode descrever melhor o comportamento dinâmico de objetos relacionados a eventos dinâmicos e introduzir novas formas de enxergar ou descrever a evolução de eventos dinâmicos na natureza.
+O método IGN dinâmico consiste da aplicação do método IGN estático \cite{simposioNeg2003} sobre cada uma das $n$ instâncias (estados) geradas a partir de um período (intervalo fixo de estados) definido pelo processo de identificação da dinâmica do comportamento dos objetos. O método rotula os grupos naturais encontrados na unidade de tempo $i$ com base na máxima densidade de objetos que se mantém no mesmo grupo após uma divisão e/ou aglomeração.
 
-\cite{kostakos} considera a estrutura de grafos temporais como grafos
-estáticos, no entanto avança sobre as métricas introduzindo conceitos como disponibilidade temporal, proximidade temporal e geodésica, e estuda os seus grafos sobre redes reais. No \cite{dynagraph} estes recursos estão presentes.
-
-O método ...\cite{ign}
+Os dois algoritmos apresentados são utilizado como base para os modelos de previsão espaço-temporais. Um modelo simples de previsão é implementado, e que é baseado no histórico dos grupos, a partir do centro e do raio dos grupos em análise, onde o raio é definido de acordo com a média do número de casos de dengue ou Chikungunya de cada grupo.

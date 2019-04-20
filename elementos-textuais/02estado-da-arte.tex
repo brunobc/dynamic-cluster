@@ -1,7 +1,7 @@
 \chapter{Conceitos e revisão bibliográfica}
 \label{chap:estadodaarte}
 
-Uma visão geral sobre agrupamentos é apresentada na seção \ref{agrupamentos}. Na seção \ref{dbscan} apresenta-se o algoritmo DBSCAN em detalhes e suas características. A seção \ref{stdbscan} apresenta o ST-DBSCAN, que é utilizada nesse trabalho para auxiliar os métodos de previsão dinâmica. Na seção  \ref{chap:redes-dinamicas}  discute-se redes dinâmicas e exibe-se o modelo Dynagraph e um editor de características. A seção  \ref{chap:trabalhos-relacionados}  define e apresenta os trabalhos relacionados ao problema de agrupamentos dinâmicos.
+Uma visão geral sobre agrupamentos é apresentada na seção \ref{agrupamentos}. Na seção \ref{dbscan} apresenta-se o algoritmo DBSCAN em detalhes e suas características. A seção \ref{stdbscan} apresenta o ST-DBSCAN, que é utilizada nesse trabalho para auxiliar os métodos de previsão dinâmica. Na seção  \ref{chap:redes-dinamicas}  discute-se redes dinâmicas e exibe-se o modelo Dynagraph e um editor de características. A seção \ref{sec:trabalhos-relacionados} define e apresenta os trabalhos relacionados ao problema de agrupamentos dinâmicos.
 
 \section{Agrupamentos}
 \label{agrupamentos}
@@ -16,7 +16,7 @@ Existem muitas variações quanto à formação de grupos. Pode-se querer defini
 
 Em processos de agrupamento dinâmico é necessário conhecer como os objetos se agrupam naturalmente assim como identificar os objetos que não estão associados a qualquer desses grupo.
 
-Os métodos mais tradicionais para esses casos estão na classe dos métodos denominados particionais e hierárquicos. Alguns algoritmos de agrupamento integram as idéias de vários outros, logo é difícil classificar um algoritmo pertencendo a somente uma categoria de métodos de agrupamento. Além do que, algumas aplicações podem ter critérios que necessitam a integração de várias técnicas de agrupamento. Os principais métodos de agrupamento existentes na literatura são categorizados, como mostram as próximas sessões.
+Os métodos mais tradicionais para esses casos estão na classe dos métodos denominados particionais e hierárquicos. Alguns algoritmos de agrupamento integram as ideias de vários outros, logo é difícil classificar um algoritmo pertencendo a somente uma categoria de métodos de agrupamento. Além do que, algumas aplicações podem ter critérios que necessitam a integração de várias técnicas de agrupamento. Os principais métodos de agrupamento existentes na literatura são categorizados, como mostram as próximas sessões.
 
 \subsection{Métodos baseados em particionamento}
 A ideia principal desta classe de algoritmos de agrupamentos é criar ${K}$ grupos dos dados, onde ${K}$ é inserido pelo usuário.
@@ -24,11 +24,11 @@ Esse método consiste em escolher ${K}$ objetos como sendo os centros dos ${K}$ 
 Os objetos são divididos entre os ${K}$ grupos de acordo com algum critério de similaridade
 estabelecido pelo algoritmo, de modo que cada objeto fique no grupo que tem o menor valor de
 distância entre o objeto e o centro do grupo a que ele pertence.
-Os algoritmos de particionamento são muito populares devido à sua facilidade de implementação e baixo custo computacional; no entanto, eles têm essas desvantagens: (1) eles são sensíveis à presença de ruído e \textit{outliers}, (2) eles podem descobrir apenas grupos com formas convexas e (3) o número de grupos precisa ser especificado.
+Os algoritmos de particionamento são muito populares devido à sua facilidade de implementação e baixo custo computacional; no entanto, eles têm essas desvantagens: eles são sensíveis à presença de ruído e \textit{outliers}, eles podem descobrir apenas grupos com formas convexas e o número de grupos precisa ser especificado.
 
 
 \subsubsection{Agrupamentos K-Médias}
-O algoritmo de agrupamento k-médias é uma das técnicas mais conhecidas dessa abordagem e foi introduzido por \cite{Macqueen67}. Ele utiliza a média dos objetos que são do grupo em questão, também conhecido como centro geométrico do grupo. A idéia principal neste algoritmo é usar a média dos objetos para atribuí-los a grupos e também usá-los para  representá-los.
+O algoritmo de agrupamento k-médias é uma das técnicas mais conhecidas dessa abordagem e foi introduzido por \cite{Macqueen67}. Ele utiliza a média dos objetos que são do grupo em questão, também conhecido como centro geométrico do grupo. A ideia principal neste algoritmo é usar a média dos objetos para atribuí-los a grupos e também usá-los para  representá-los.
 K-médias é um algoritmo que garante a convergência para um ótimo local, mas não necessariamente um ótimo global. À medida que ${K}$ aumenta, o custo de encontrar a solução ótima diminui, e atinge seu mínimo quando ${K}$ é igual ao número de objetos \cite{Wu2008}. Especificamente, o procedimento é mostrado abaixo:
  \begin{enumerate}
 	\item Inserir os objetos para serem agrupados e também o número ${K}$ de grupos.
@@ -312,7 +312,7 @@ A complexidade do método IGN é ${O(n^2 log n)}$, onde ${n}$ é o número de in
 Algumas características desse método são:
 \begin{itemize}
 \item Apresenta bons resultados em qualquer métrica;
-\item É sensível à presença de \emph{outliers} em situações muito específicas. Nestes casos pode apresentar resultados insatisfatórios quando houver proximidade de \emph{outliers} entre grupos naturalmente formados, confundindo os grupos naturais pela existência de "indivíduos pontes" (que surgem em função das dimensões de afastamento entre grupos inerentes);
+\item É sensível à presença de \emph{outliers} em situações muito específicas. Nestes casos podem apresentar resultados insatisfatórios quando houver proximidade de \emph{outliers} entre grupos naturalmente formados, confundindo os grupos naturais pela existência de "indivíduos pontes" (que surgem em função das dimensões de afastamento entre grupos inerentes);
 \item Se há uma separação definida (um corte), o método é exato, ou seja, sempre encontrará os grupos naturais. Se a separação não existe, o método pode falhar;
 \item Diferentemente dos demais, o número de grupos naturais e sua composição é obtida automaticamente no processo;
 \item Usa o dendrograma de forma invertida para definir o ponto de corte (corte transversal no dendrograma), baseado na função monótona decrescente gerada pela função de custo de retirada das arestas da AGM (da maior para a menor) formada entre os indivíduos do processo de agrupamento.
@@ -387,7 +387,7 @@ também ser considerado como um método baseado em densidade, descrito a seguir.
 Uma das vantagens do STING é a complexidade linear de tempo em relação ao número de objetos a serem agrupados.
 
 \subsection{Métodos baseados em densidade}
-Nesta classe de algoritmos a idéia principal é manter os grupos em crescimento, desde que sua densidade esteja acima de um certo limite. A vantagem dos algoritmos baseados em densidade, em comparação aos algoritmos de particionamento baseados em distância, é que eles podem detectar grupos de forma arbitrária. Isso também fornece uma proteção natural contra \textit{outliers}. Por outro lado, os algoritmos baseados na distância entre indivíduos detectam apenas aglomerados de forma convexa.
+Nesta classe de algoritmos a ideia principal é manter os grupos em crescimento, desde que sua densidade esteja acima de um certo limite. A vantagem dos algoritmos baseados em densidade, em comparação aos algoritmos de particionamento baseados em distância, é que eles podem detectar grupos de forma arbitrária. Isso também fornece uma proteção natural contra \textit{outliers}. Por outro lado, os algoritmos baseados na distância entre indivíduos detectam apenas aglomerados de forma convexa.
 
 Os agrupamentos baseados em densidade analisam a quantidade de elementos dentro de uma vizinhança de acordo com determinados parâmetros. A ideia-chave é que, para cada instância de um grupo, a vizinhança de um determinado raio deve conter pelo menos um número mínimo de instâncias.
 
