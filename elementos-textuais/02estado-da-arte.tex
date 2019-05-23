@@ -360,6 +360,31 @@ Pode-se observar que os grupos foram identificados ao executar o algoritmo IGN s
 		\Fonte{\cite{joaoFrederico}}
 	}
 \end{figure}
+\FloatBarrier
+
+O exemplo da figura \ref{fig:IGNGraph} exibe uma AGM com 8 vértices e o custo das arestas variam de 1 a 6.
+
+\begin{figure}[!ht]
+	\centering
+	\Caption{\label{fig:IGNGraph} AGM - Árvore Geradora Mínima}
+	\UECEfig{}{
+		\includegraphics[width=14cm]{figuras/ign/IGN.png}
+	}{
+		\Fonte{Elaborado pelo autor}
+	}
+\end{figure}
+
+Pode-se constatar no gráfico \ref{fig:IGNGraphic} a formação de dois grupos ao remover a ligação entre os vértices 1 e 5 do grafo da figura \ref{fig:IGNGraph}, onde ${\theta}$ é o maior ângulo formado ao remover uma ligação da AGM. Temos que o eixo das abscissas representa a quantidade de grupos ($x$) e o das ordenadas o custo da função objetivo $f(x)$.
+
+\begin{figure}[!ht]
+	\centering
+	\Caption{\label{fig:IGNGraphic} Visão da curva ${f(x)}$}
+	\UECEfig{}{
+		\includegraphics[width=12cm]{figuras/ign/graphicIGN.png}
+	}{
+		\Fonte{Elaborado pelo autor}
+	}
+\end{figure}
 
 
 \subsection{Métodos baseados em estrutura de grade}
