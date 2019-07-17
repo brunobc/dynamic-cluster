@@ -1,19 +1,27 @@
-\section{Trabalhos Relacionados}
+\section{Estudos Relacionados e Escolha de Métodos Dinâmicos}
 \label{sec:trabalhos-relacionados}
 
-% TODO: melhorar este capítulo
-Como há uma carência de estudos relacionando os assuntos abordados: agrupamento, previsão em dados dinâmicos espaço-temporais, grafos dinâmicos e sistemas web de forma integrada, foi necessário dividir o problema de agrupamentos e previsões dinâmicos em três etapas:
+% TODO: melhorar este capítulo - Pesquisa que não fizemos
+
+\subsection{Estudos Relacionados}
+\label{subsec:estudos}
+
+\subsection{Escolha dos Métodos Dinâmicos}
+\label{subsec:metodos-escolhidos}
+
+Como vimos na seção anterior há uma carência de estudos relacionando os assuntos abordados: agrupamento, previsão em dados dinâmicos espaço-temporais, grafos dinâmicos e sistemas web de forma integrada. Deste modo foi necessário dividir o problema de agrupamentos e previsões dinâmicos em três etapas:
 \begin{itemize}
 \item Estrutura de dados em grafos dinâmicos.
 \item Modelos de previsão espaço-temporais.
 \item Algoritmos de agrupamento dinâmico.
 \end{itemize}
 
-A pesquisa aborda a estrutura de dados em grafos dinâmicos usando passos já descritos na literatura, principalmente o modelo Dynagraph \cite{dynagraph}, que é baseado na primeira proposta em \cite{dynagraph2012}, onde o Dynagraph usa sequências temporais para vértices, arestas, características modificáveis dos vértices e arestas e o relacionamento entre suas características. Ele permite formar um grafo com as informações necessárias para qualquer instante no tempo. Com o Dynagraph é possível visualizar o comportamento do grafo ao longo de um período de tempo, verificar o estado de cada objeto a qualquer tempo e editá-lo.
+Esta pesquisa aborda nas seções anteriores deste capítulo a estrutura de dados em grafos dinâmicos usando passos já descritos na literatura, principalmente o modelo Dynagraph \cite{dynagraph}, que é baseado na primeira proposta em \cite{dynagraph2012}, onde o Dynagraph usa sequências temporais para vértices, arestas, características modificáveis dos vértices e arestas e o relacionamento entre suas características. Ele permite formar um grafo com as informações necessárias para qualquer instante no tempo. 
 
-O algoritmo de agrupamento dinâmico ST-DBSCAN tem como base o algoritmo DBSCAN, e tem a capacidade de descobrir
-agrupamentos de acordo com valores não espaciais, espaciais e temporais dos objetos. Com ele é possível descobrir grupos em dados espaciais-temporais.
+O algoritmo de agrupamento dinâmico \acrshort{ST-DBSCAN} tem como base o algoritmo \acrshort{DBSCAN}, o qual possui a capacidade de descobrir agrupamentos de acordo com valores não espaciais, espaciais e temporais dos objetos. Com ele é possível descobrir grupos em dados espaciais-temporais baseado na densidade das ocorrência dos objetos. Tais agrupamentos se caracterizam por se distribuem em massas compactas, pois são baseadas em densidade. Logo, este método pode ser usado no contexto da descoberta de grupos para o conjunto de dados espaço-temporais de casos humanos de arboviroses, dada a forma como elas se expandem. 
 
-O método IGN dinâmico consiste da aplicação do método IGN estático \cite{simposioNeg2003} sobre cada uma das $n$ instâncias (estados) geradas a partir de um período (intervalo fixo de estados) definido pelo processo de identificação da dinâmica do comportamento dos objetos. O método rotula os grupos naturais encontrados na unidade de tempo $i$ com base na máxima densidade de objetos que se mantém no mesmo grupo após uma divisão e/ou aglomeração.
+O método \acrshort{ST-IGN} consiste da aplicação do método \acrshort{IGN} estático \cite{simposioNeg2003} sobre cada uma das $n$ instâncias (estados) geradas a partir de um período (intervalo fixo de estados) definido pelo processo de identificação da dinâmica do comportamento dos objetos. O método rotula os grupos naturais encontrados na unidade de tempo $i$ com base na máxima densidade de objetos que se mantém no mesmo grupo após uma divisão e/ou aglomeração.
 
-Os dois algoritmos apresentados são utilizado como base para os modelos de previsão espaço-temporais. Um modelo simples de previsão é implementado, e que é baseado no histórico dos grupos, a partir do centro e do raio dos grupos em análise, onde o raio é definido de acordo com a média do número de casos de dengue ou Chikungunya de cada grupo.
+Os dois algoritmos apresentados são utilizados como base para os modelos de previsão espaço-temporais. Um modelo simples de previsão é implementado, o qual se basea no histórico dos grupos, a partir do centro e do raio dos grupos em análise, onde o centro e o raio são definidos de acordo com a média da posição dos objetos de cada grupo identificado no tempo. Dos grupos identificados como sendo de mesma origem no tempo são então tomados seus valores médios de seus centros e raios, gerando finalmente o grupo de previsão do próximo intervalo. O método \acrshort{ST-IGN} em especial tem a vantagem da separabilidade dos grupos naturais, caso exista de forma bem definida, como foi mostrado no capítulo \ref{chap:estadodaarte}, além disto este método consegue descobrir grupos que se formam em linha e mesmo em massa, apesar da desvantagem de formar grandes grupos quando as distãncias são muito pequenas entre objetos.
+
+Uma vez que é bastante assertivo nos grupos que forma, não importando a quantidade de dados, trata-se de um método que pode ser considerado para avaliação, haja vista sua liberdade em encontrar grupos de várias formas permitindo-nos abrir a caracterização de padrões de comportamento das arboviroses, além das hoje consideradas pela literatura.

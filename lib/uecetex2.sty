@@ -501,7 +501,7 @@
 }
 
 \newcommand{\preambulodissertacao}{
-	Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimirprogramamestrado\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. Área de Concentração: \imprimirareadeconcentracaomestrado \\
+	Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimirprogramamestrado\ do \imprimircentro\ da \imprimiries \ e do Instituto Federal de Educação, Ciência e Tecnologia do Ceará, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. Área de Concentração: \imprimirareadeconcentracaomestrado \\
 }
 
 \newcommand{\preambulotccgraduacao}{
@@ -570,13 +570,27 @@
 \newcommand{\imprimircapadissertacao}{%
 	\begin{capa}%
 		% Todos os elementos da capa devem esta centralizado
-		\center
 		% Todos os elementos da capa devem esta em negrito
 		\bfseries
-
-        \includegraphics[scale=0.12]{lib/logo-uece} \\
+        
+        
+        \begin{figure}
+        \centering
+        \begin{minipage}{.5\textwidth}
+          \centering
+          \includegraphics[width=.23\linewidth]{lib/logo-uece}
+        \end{minipage}%
+        \begin{minipage}{.5\textwidth}
+          \centering
+          \includegraphics[width=.4\linewidth]{lib/logo-ifce}
+        \end{minipage}
+        \end{figure}
+        
         \vspace{0.1cm}
+        
+        \center
 		\MakeUppercase{\imprimiries} \\
+		\MakeUppercase{Instituto Federal de Educação, Ciência e Tecnologia do Ceará} \\
 		\MakeUppercase{\imprimircentro} \\
 		\abntex@ifnotempty{\imprimirprogramamestrado}{
 			\MakeUppercase{\imprimirprogramamestrado} \\
@@ -589,7 +603,7 @@
 		
 		\vspace{5cm}
 		
-		\MakeUppercase{\imprimirtitulo}
+		\imprimirtitulo
 		
 		\vfill
 		\normalsize\MakeUppercase\imprimirlocal\par	
@@ -1245,11 +1259,7 @@
 \setlength{\glsdescwidth}{\linewidth}
 
 \newcommand{\imprimirlistadeabreviaturasesiglas}{ %
-	%\printglossary[type=\acronymtype,style=long,nonumberlist,title={Lista de Abreviaturas e Siglas\vspace{-0.3cm}}] %
-	\printacronyms[%
-	name = Lista de Abreviaturas e Siglas\vspace{-0.3cm},
-	sort = true,
-	]
+	\printglossary[type=\acronymtype,style=long,nonumberlist,title={Lista de Abreviaturas e Siglas\vspace{-0.3cm}}] %
 	\pagebreak %
 }
 

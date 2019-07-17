@@ -1,97 +1,108 @@
 \chapter{Introdução}
 \label{chap:introducao}
-Grandes quantidades de dados estão disponíveis para análise em organizações hoje em dia. Estas enfrentam vários desafios quando se tenta analisar dados gerados com o objetivo de extrair informações úteis.
+%Incluir referências para google e bing
+A ordem de Hexabytes em dados estão disponíveis para análise em organizações hoje em dia, através de informações provenientes de bases internas e externas (Google, Bing). Estas enfrentam vários desafios quando tentam analisar dados gerados com o objetivo de extrair informações úteis \cite{Wu2008}, \cite{Mitsa:2010}, \cite{cheng:2014}, \cite{Atluri:2018}.
 
-Esta capacidade analítica precisa ser reforçada com ferramentas capazes de lidar com eles sem tornar o processo de análise uma tarefa árdua.
-Agrupamento de dados normalmente são usados no processo de análise de dados, pois esta técnica não exige qualquer conhecimento prévio. Contudo, os algoritmos de agrupamento geralmente requerem um ou mais parâmetros de entrada que influenciam o processo de agrupamento e os resultados que podem ser obtidos. 
+Esta capacidade analítica é possível por meio de ferramentas capazes de lidar com os dados sem tornar o processo de análise uma tarefa árdua. Os agrupamentos de dados normalmente são usados no processo de análise de dados devido esta técnica não exigir qualquer conhecimento prévio, apesar dos algoritmos de agrupamento dentre eles, o dinâmico, geralmente, requerem um ou mais parâmetros de entrada que influenciam o processo de agrupamento e os resultados que podem ser obtidos. 
 
-Nos últimos anos, o problema de agrupamento dinâmico tem atraído o interesse de pesquisas, impulsionado pelo aumento da disponibilidade de grandes conjuntos de dados contendo elementos espaciais e temporais. Este problema pode ser analisado como um problema de otimização. Seu objetivo principal é maximizar as diferenças das características dos indivíduos de grupos distintos, e minimizar as diferenças das características dos indivíduos de um mesmo grupo.
-
-Agrupamento de dados ganhou uso muito difundido, especialmente para dados estáticos. No entanto, o rápido crescimento de dados espaço-temporais de inúmeros instrumentos, como os satélites em órbita terrestre, criou uma necessidade de métodos de agrupamento espaço-temporais para extrair e monitorar agrupamentos dinâmicos. O agrupamento espaço-temporal dinâmico enfrenta dois grandes desafios: primeiro, os \textit{clusters} são dinâmicos e podem mudar de tamanho, forma e propriedades estatísticas ao longo do tempo. Em segundo lugar, vários dados espaço-temporais são incompletos, ruidosos, heterogêneos e altamente variáveis sobre espaço e tempo.
+Muitos carros, como táxis e caminhões, que instalam receptores de sistema de posicionamento global (\acrshort{GPS} - \emph{\acrlong{GPS}}), podem monitorar o estado de execução e registrar informações espaciais e temporais a cada segundo. Toda essa informação espaço-temporal é útil para a análise de padrões no espaço e no tempo. O espaço pode ser representado por um endereço, coordenadas geográficas de latitudes e longitudes ou coordenadas locais (X, Y). O tempo pode ser exibida por ano, mês e dia e, às vezes, com detalhes como hora, minuto ou segundo \cite{Zhicheng:2019}.
 
 
-O problema de agrupamento dinâmico é o problema de encontrar grupos de dados de máxima dissimilaridade que evoluem no tempo e no maior tempo possível (ou com a maior estabilidade possível).
+O processo de agrupamento de dados ganhou uso muito difundido, especialmente para dados estáticos. No entanto, o rápido crescimento da demanda por informações espaço-temporais de inúmeros instrumentos e processos: como os satélites em órbita terrestre, acompanhamento das mudanças climáticas, ocorrências das mais diversas, trânsito nas cidades, dentre outros, criaram uma necessidade de métodos de agrupamento espaço-temporais para extrair e monitorar agrupamentos dinâmicos. Os conjuntos de dados coletados, independentemente de estarem em forma de tabela ou gráfico, são muitas vezes complexos demais para serem entendidos, diante disso métodos eficiente de análise espaço-temporal são importantes para determinar padrões significativos para melhor compreensão ou visualização \cite{Shekhar2011}.
 
-Já o problema de previsão de grupos dinâmicos introduz o conceito de indicar os possíveis grupos que serão formados no tempo após um conjunto de eventos serem observados previamente.
+Nos últimos anos, o problema de agrupamento dinâmico tem atraído o interesse de pesquisas, impulsionado pelo aumento da disponibilidade de grandes conjuntos de dados contendo elementos espaciais e temporais. Este problema pode ser analisado como um problema de otimização, ou de particionamento. Seu objetivo principal é maximizar as diferenças das características dos indivíduos de grupos distintos, e minimizar as diferenças das características dos indivíduos de um mesmo grupo. O agrupamento espaço-temporal dinâmico considera que os individuos se movimentam no espaço e no tempo atualizando inclusive suas características individuais. Deste modo, este processo enfrenta dois grandes desafios no seu reconhecimento: primeiro, os grupos (\textit{clusters}) que são dinâmicos podem mudar de tamanho, forma e propriedades estatísticas ao longo do tempo e mesmo no espaço. Em segundo lugar, vários dados espaço-temporais são incompletos, ruidosos, heterogêneos e altamente variáveis no espaço e tempo. O problema de agrupamento dinâmico é encontrar grupos de dados de máxima dissimilaridade que evoluem no tempo e no maior tempo possível (ou com a maior estabilidade possível). Já o problema de previsão de grupos dinâmicos introduz o conceito de indicar os possíveis grupos que serão formados no tempo após um conjunto de eventos serem observados previamente.
 
-Métodos de previsão de agrupamentos dinâmicos têm sido estudados nas áreas de climatologia, detecção de doenças, entre outras. Estes estudos concentram-se em modelos espaço temporais que indicam caminhos de solução baseados na densidade espaço temporal dos dados. Nesta dissertação pretende-se estudar o comportamento de um método desta natureza, considerando uma aplicação no monitoramento do avanço dos casos humanos de doenças provocadas por arboviroses (Dengue e Chickungunya) em Fortaleza/CE.
+Métodos de previsão de agrupamentos dinâmicos têm sido estudados nas áreas de climatologia, detecção de doenças, entre outras. Estes estudos concentram-se em modelos espaço-temporais que indicam caminhos de solução baseados na densidade espaço-temporal dos dados \cite{gupta:2014}. 
 
-A representação dinâmica dos eventos também tem sido um problema importante. Muitos modelos são utilizados tais como representação espaço temporal por vídeos e grafos. Na representação espaço temporal por vídeos, o objetivo é sincronizar os modelos de previsão com a descoberta dos agrupamentos enquanto um vídeo real acontece (usado principalmente na climatologia  \cite{faghmous2013}); já a representação dinâmica por grafos dinâmicos, tem sido estudada pela literatura com maior profundidade pois permite acompanhar eventos e gerar previsões espaço temporais sabendo-se e controlando-se os principais atores do processo, tais como: elemento dinâmico e contexto dinâmico como descritos em \cite{holme:predictability} e \cite{Mitsa:2010}.
+No Brasil o problema da expansão e contração das doenças provocadas por Arboviroses é imenso, pois afeta centenas de milhares de pessoas ano a ano. Os sistemas de controle das doenças provocadas pelo \emph{Aedes Aegypti}, tais como a Dengue e Chikungunya, têm sido bastante negligenciados, apesar de muitos esforços isolados neste sentido: TabWin \cite{tabwin}, MonitoraDengue \cite{monitoraDengue} e \acrshort{SISPNCD} \cite{fad}. Como os esforços e a informação é desagregada, o gerenciamento do processo de prevenção e controle é muito difícil, tornando ainda ineficiente o trabalho de campo haja vista as poucas facilidades de coordenação e projeção em tempo real dos acontecimentos.
+% http://www.tribunadonorte.com.br/noticia/aplicativo-do-lais-monitora-dengue-zika-e-chikungunya/415494
+
+Até onde se sabe, nenhuma das ferramentas indicadas é capaz de integrar os diferentes esforços em um único arcabouço computacional que permita fazer o processo de gestão das diversas frentes da prevenção e controle de arboviroses. \citeautoronline{webdengue2011} propuseram o arcabouço computacional WebDengue, que integra através de uma plataforma web com parcelas em \emph{desktop} e \emph{smartphones} todas as ações em sistemas próprios para o planejamento e controle logístico de visitas de agentes de endemias, planejamento/acompanhamento/notificação/eliminação da presença do vetor em campo, acompanhamento e notificação de casos humanos e transmissão de informação entre laboratórios de zoonoses para identificação dos Artrópodes e laboratório central de análises clínicas da presença dos vírus e patologia \acrshort{LACEN}, como mostrado na figura \ref{fig:webdengue}.
+
+% Este procedimento foi elaborado por \cite{webdengue2008}, cujo principal objetivo era de mapear a evolução da dengue na cidade de Fortaleza, tomando como base as características de evolução dos casos e focos da doença observados em 2005 para a Regional II de Fortaleza-CE. A pesquisa se preocupou em definir intervalos de observação que justificassem um comportamento de evolução do mosquito Aedes aegypt (Focos) e dos casos humanos da doença, utilizando como ferramenta principal o algoritmo estático IGN e o \textit{framework} WebDengue \cite{webdengue2008}. Esta estrutura computacional é uma solução de vigilância epidemiológica composta por um conjunto de sistemas computacionais. Essas tecnologias combinam geoprocessamento, sistemas de apoio a decisão, sistemas de bancos de dados e a aquisição de dados remotos.
+
+\begin{figure}[!ht]
+	\centering
+	\Caption{\label{fig:webdengue} Estrutura computacional proposta para a gestão da dengue}	
+	\UECEfig{}{
+		\includegraphics[width=12cm]{figuras/webdengue.png}
+	}{
+		\Fonte{Sistema WebDengue \cite{webdengue2011} }
+	}
+\end{figure}
+
+
+O WebDengue \cite{webdengue2011}, possui nativamente uma base de dados organizada em um Banco de Dados espaço-temporal, que permite aos gestores realizarem diversas avaliações analíticas, de modo que se possa obter o melhor resultado no tratamento epidemiológico das arboviroses. Modelos estatísticos de previsão usando técnicas padrão (Médias Móveis, suavização exponencial, \emph{holt-winters} e outras), fazem parte do \emph{framework}. Apesar disto, notou-se que tais modelos não ajudam muito no processo de acompanhamento da dinâmica da expansão das arboviroses, pois não identificam nos bairros as áreas mais afetadas e que devem ser trabalhadas pelos agentes no sentido de debelar tais doenças.
+
+A tarefa de agrupamento depende muito das características específicas dos dados e a maneira como eles são relacionadas. A Figura INCLUIR_FIGURA exibe uma possível classificação de tais tipos de dados, com base na dimensão temporal, que descreve em que medida a evolução do objeto é capturada pelos dados, e a dimensão espacial, que descreve se os objetos estão associados a um local fixo ou sua localização é dinâmica e pode mudar no tempo.
+ Os tipos de dados espaço-temporais podem ser divididos em cinco categorias contendo eventos, variáveis georreferenciadas, séries temporais georreferenciadas, pontos de movimentação e trajetórias. \citeautoronline{Kisilevich2009} descrevem as principais classes de tipos de dados:
+
+%TODO incluir tipos
+
+% incluir referência para o grupo de pesquisa Data Mining e Categorização de Informações em Larga Escala?
+Motivados pelo problema, o grupo de pesquisa em \textit{Data Mining e Categorização de Informações em Larga Escala}, desenvolveu uma concepção genérica de esforços no sentido de permitir a geração de modelos de previsão espaço-temporais da ocorrência de doenças provocadas por arbovisores. O primeiro passo nesse sentido foi dado com a criação de um modelo de visualização espaço-temporal robusto, denominado \emph{Dynagraph} \cite{dynagraph}, e o segundo seria a concepção, análise, implementação e avaliação de resultados de um \acrfull{SAD} que permita reconhecer agrupamentos de casos humanos de arboviroses, já que o mosquito se manifesta em concentrações definidas nas áreas urbanas de alta sucetibilidade à sua sobrevivência \cite{comportamentoDengue}.
+Esta dissertação estuda o comportamento de métodos de agrupamento dinâmico espaço-temporais, considerando uma aplicação no monitoramento do avanço dos casos humanos de doenças provocadas por arboviroses (Dengue e Chikungunya) em Fortaleza/CE.
+
+A representação dinâmica dos eventos também tem sido um problema importante. Muitos modelos são utilizados tais como representação espaço-temporal por vídeos e grafos. Na representação espaço-temporal por vídeos, o objetivo é sincronizar os modelos de previsão com a descoberta dos agrupamentos enquanto um vídeo real acontece (usado principalmente na climatologia \cite{faghmous2013}); já a representação dinâmica por grafos dinâmicos, tem sido estudada pela literatura com maior profundidade pois permite acompanhar eventos e gerar previsões espaço-temporais sabendo-se e controlando-se os principais atores do processo, tais como: elemento dinâmico e contexto dinâmico como descritos em \cite{holme:predictability} e \cite{Mitsa:2010}.
 
 Ferramentas de grafos dinâmicos foram desenvolvidas e seguem em uso, como o Gephi \cite{gephi} e o Dynagraph \cite{dynagraph}. Aqui será feito um trabalho sobre o modelo Dynagraph para representação de uma estrutura dinâmica incluindo a possibilidade de variação dinâmica das características (cor, forma, tamanho, etc) dos elementos do grafo. Deste modo, esta visão evolutiva ajudaria ao modelo sistêmico representar claramente a realidade da evolução dos fenômenos que se deseja demonstrar para facilitar a tomada de decisão.
 
-\section{Objetivos}
-\label{sec:objetivos}
-A seguir, são expostos os objetivos desta dissertação, definindo o produto
-final a ser obtido.
+% Objetivos
 
-\subsection{Objetivo Geral}
+Esta dissertação propõe e apresenta um \acrshort{SAD} especializado na previsão de agrupamentos dinâmicos espaço-temporais. Utilizando dados provenientes de bases oficiais do município de Fortaleza/CE, \acrfull{SIMDA}, advindas do monitoramento da evolução de doenças provocadas por arboviroses (Dengue e Chikungunya). 
 
-Propor um modelo de grafos dinâmicos que inclua a possibilidade de descrever características dinâmicas de vértices e arestas, e de um modelo de previsão de agrupamentos dinâmicos para o monitoramento da evolução de doenças provocadas por arboviroses (Dengue e Chikungunya).
-
-\subsection{Objetivos Específicos}
-\label{sec:objetivos-especificos}
-
-Para que se alcance o objetivo geral, as seguintes metas foram estabelecidas:
+% Objetivos Específicos}
+Para que se alcance este objetivo, as seguintes etapas foram estabelecidas:
 
 \begin{alineas}
-	\item Extração de características de previsão espaço-temporal sobre a evolução dos agrupamentos dinâmicos.
-	\item Avaliação dos resultados sobre bases reais ligadas a evolução de casos de Dengue e Chikungunya na cidade de Fortaleza/CE e outras bases dinâmicas.
+    \item Descrever os tipos de agrupamentos dinâmicos.
+	\item Extrair de características de previsão espaço-temporal sobre a evolução dos agrupamentos dinâmicos.
+	\item Avaliar os resultados da metodologia de preparação de informações, parametrização e aplicação dos métodos de agrupamento são avaliados sobre estas bases de dados reais.
 \end{alineas}
 
-\section{Hipóteses}
+% Justificativa e Relevância
+
+Em \acrshort{SIMDA}, estão disponíveis dados espaço-temporais para acompanhar a evolução da dengue e chikungunya em Fortaleza, que é um sistema para monitorar diariamente os casos de endemias como zika, leishmaniose, leptospirose, dengue e chikungunya. Somente estas duas últimas endemias estão disponíveis visualmente num mapa. As informações nesse sistema pouco ajudam na melhor tomada de decisão para direcionamento dos recursos apropriados para o controle das doenças nos períodos de grande crescimento. A antevisão do processo mostra a possibilidade de tornar factível a tomada de decisão assertiva. É preciso também saber o quão preciso é o método, para que seja usado como ferramenta de decisão neste contexto.
+
+Existe a necessidade de ferramentas e estudos relacionando os assuntos abordados: agrupamento, previsão em dados dinâmicos espaço-temporais, grafos dinâmicos e sistemas web de forma integrada, bem como acelerar técnicas avançadas de agrupamento em grafos dinâmicos para esse tipo de tomada de decisão.
+
+A pesquisa analisa dados extraídos para apoio à tomada de decisão, concentrando-se na avaliação dos resultados sobre bases de dados dinâmicas relativas a casos de Dengue e Chikungunya, tomando-se como base as características de evolução dos casos da doença observados entre 2016 e 2019 em Fortaleza/CE.
+
+% Hipóteses
 As hipóteses a seguir conduziram a elaboração desta dissertação:
 \begin{alineas}
-    \item É viabilizado o armazenamento dos dados por uma ferramenta de extração e armazenamento de dados automatizada seguindo a estrutura de dados do Dynagraph;
+    \item É viabilizado o armazenamento dos dados por uma ferramenta de extração e armazenamento de dados automatizada seguindo a estrutura de dados do Dynagraph.
 	\item É exequível a integração de um editor de características ao Dynagraph, que é um software extensível.	
 	\item É realizável a utilização do modelo proposto de agrupamentos em grafos dinâmicos em um ambiente Web.	
-	\item É possível a criação de um algoritmo capaz de sugerir  agrupamentos naturais de casos de doenças geolocalizados baseados no tempo.
+	\item É possível a criação de um algoritmo capaz de sugerir agrupamentos naturais dinâmicos espaço-temporais de casos de doenças como dengue e chikungunya geolocalizados no tempo.
+	\item É possível a avaliação da acertividade da metodologia no tocante do monitoramento da evolução da doença.
 \end{alineas}
 
-\section{Justificativa}
-Percebe-se a necessidade de ferramentas e estudos 
-relacionando os assuntos abordados: agrupamento, previsão em dados
-dinâmicos espaço-temporais, grafos dinâmicos e sistemas web de forma integrada.
-E também, acelerar técnicas de agrupamento em grafos dinâmicos para tomada de decisão.
+% Metodologia
 
-Em \cite{simda}, estão disponíveis dados espaço-temporais para acompanhar a evolução da dengue e chikungunya em Fortaleza, que é um sistema para monitorar diariamente os casos de endemias como zika, leishmaniose, leptospirose, dengue e chikungunya. Somente estes dois últimos estão disponíveis visualmente num mapa. As informações nesse sistema pouco ajudam na melhor tomada de decisão para direcionamento dos recursos apropriados para o controle das doenças nos períodos de grande crescimento. A antevisão do processo mostra a possibilidade de tornar factível a tomada de decisão assertiva. É preciso também saber o quão preciso é o método, para que seja usado como ferramenta de decisão neste contexto.
+Esta dissertação usou como fontes principais de pesquisa \textit{sites} especializados em artigos científicos, por exemplo, o portal de periódicos da \acrshort{CAPES}, \acrshort{IEEE}, Scielo e outros sites relevantes de referências que possuem livros, periódicos e dissertações disponíveis.
 
-A relevância da pesquisa está em permitir uma análise dos dados extraídos 
-para apoio à tomada de decisão,  concentrando-se na avaliação dos resultados sobre bases de dados
-dinâmicas relativas a casos de Dengue e Chikungunya.
-A pesquisa toma como base as características de evolução dos casos da doença
-observados entre 2015 e 2018 em Fortaleza/CE.
-Os dados foram tomados a partir do Sistema de Monitoramento Diário de Agravos (SIMDA), onde um estado é definido como o período de uma semana. 
-
-\section{Metodologia}
-
-As fontes principais de pesquisa foram \textit{sites} especializados em pesquisas científicas, por exemplo, o portal de periódicos
-da CAPES, IEEE e outros sites de referências que possuem livros, periódicos e dissertações disponíveis.
-Os temas essenciais abordados na pesquisa foram:
+Os temas essenciais abordados nesta pesquisa foram:
 \begin{itemize}
-	\item Estrutura de dados em grafos dinâmicos
-	\item Algoritmos de agrupamentos dinâmicos
-	\item Modelos de previsão espaço-temporais
+	\item Estrutura de dados em grafos dinâmicos.
+	\item Algoritmos de agrupamentos dinâmicos.
+	\item Modelos de previsão espaço-temporais.
+	\item Sistemas de apoio a decisão web com \emph{Datawarehouse}.
 \end{itemize}
 
-No trabalho proposto, buscou-se inicialmente extrair informações baseadas na previsão de agrupamentos dinâmicos
-em grafos. Assim sendo, e após obter os dados a partir do \cite{simda}, através de uma ferramenta implementada que automatiza a extração e armazenamento dos dados, detectou-se a necessidade de um software para representação e tratamento de grafos dinâmicos, que tem como característica a extensibilidade. Para isso, foi escolhido e ajustado o software Dynagraph, \cite{dynagraph}.
+No trabalho proposto, buscou-se inicialmente extrair informações baseadas na previsão de agrupamentos dinâmicos em grafos. Assim sendo, e após obter os dados a partir do \acrshort{SIMDA}, através de uma ferramenta implementada que automatiza a extração e armazenamento dos dados (concepção em apêndice), detectou-se a necessidade de um software para representação e tratamento de grafos dinâmicos, que tem como característica a extensibilidade. Para isso, foi escolhido e ajustado o software Dynagraph, \cite{dynagraph}.
 
 Para a obtenção das informações espaço-temporais mapeáveis e características do indivíduo, seguem-se três estratégias para resolução do problema: na primeira os dados são analisados como um só grupo (Agrupamento Estático); na segunda os dados são tratados por intervalos pré-definidos; na terceira mapeia-se as evoluções entre intervalos observados.
+
 Dessa forma, esta pesquisa visa indicar os possíveis grupos relacionados espacial e temporalmente.
 
 Por fim, foi desenvolvido um modelo capaz de representar agrupamentos e previsão dinâmicos a partir do software Dynagraph, para avaliação e conclusão dos resultados obtidos em bases dinâmicas.
 
-\section{Organização do Texto}
+% Organização do Texto
+
 Esta dissertação está organizada em 5 capítulos. O capítulo 1 apresenta uma
-introdução à necessidade da representação e manipulação do agrupamento espaço-temporal
-dinâmico, assim como a previsão da formação de novos grupos dinâmicos. Em seguida são apresentados os objetivos,
-as hipóteses, a metodologia utilizada e as contribuições. O capítulo 2 constitui a revisão
-bibliográfica sobre modelagem com grafos dinâmicos, métodos de agrupamento por densidade, redes dinâmicas,
-o Dynagraph, um editor de características e um conjunto de trabalhos relacionados a esta área de conhecimento.
-O capítulo 3 apresenta o modelo de agrupamento e previsão em redes dinâmicas. O capítulo 4 destaca
-os resultados e comparação dos algoritmos apresentados. O capítulo 5 apresenta as considerações finais
-e propostas de trabalhos futuros.
+introdução à necessidade da representação e manipulação do agrupamento espaço-temporal dinâmico, assim como a previsão da formação de novos grupos dinâmicos. O capítulo 2 constitui a revisão bibliográfica sobre modelagem com grafos dinâmicos, métodos de agrupamento por densidade, redes dinâmicas, o Dynagraph, um editor de características e um conjunto de trabalhos relacionados a esta área de conhecimento. O capítulo 3 apresenta o modelo de agrupamento e previsão em redes dinâmicas. O capítulo 4 destaca
+os resultados e comparação dos algoritmos apresentados. O capítulo 5 apresenta as conclusões, dificuldades encontradas/impedimentos e propostas de trabalhos futuros.
 
 
 

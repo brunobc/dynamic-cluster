@@ -1,37 +1,106 @@
 \chapter{Conclusões e Trabalhos Futuros}
 \label{chap:conclusoes-e-trabalhos-futuros}
 
-\section{Considerações finais}
-\label{sec:contribuicoes-do-trabalho}
+\section{Conclusões}
+\label{sec:conclusoes}
 
-Criação de um método para resolver o Problema de Agrupamento em Grafos Dinâ-
-micos e previsão de evolução destes agrupamentos.
-A expectativa é de que ao final desta pesquisa, tenha-se uma extensão do Dynagraph
-para visualização de agrupamentos dinâmicos e previsão dinâmica.
-Utilizar a ferramenta para outros tipos de doenças como: Chikungunya e Zika Vírus.
-Finalmente, espera-se que o produto final e os resultados obtidos possibilitem a previsão e
-prevenção de novos casos de dengue para um combate efetivo à doença.
+Nesta dissertação foi apresentada uma metodologia para resolver o Problema de Agrupamento em Grafos Dinâmicos e previsão de evolução destes agrupamentos no espaço-tempo aplicado na expansão da Dengue e Chikungunya.
 
-\section{Limitações}
+No \acrfull{SAD} foi formalizada a metodologia do processo de aquisição de dados, representação, parametrização, execução e análise do processo de previsão espaço-temporal. Foi desenvolvido um \textit{\acrfull{DW}} integrando-se de forma semi-automática ao \acrshort{SIMDA}, acoplado a uma extensão do \emph{Dynagraph} que serve como ambiente de visualização de agrupamentos dinâmicos e previsão dinâmica utilizando os algoritmos de agrupamento dinâmico espaço-temporal: \acrshort{ST-DBSCAN} e \acrshort{ST-IGN} aqui reportados. 
+
+A média móvel das variáveis posição de centros de grupos e raio foi utilizada com relativo sucesso (momentos críticos de expansão dos casos humanos de dengue e chikungunya) para realizar a previsão dos locais onde estariam os casos humanos na próxima semana epidemiológica.   
+
+Os resultados apresentados demonstram que a aplicação adequa-se a mecanismos de combate a endemias tradicionais para que ações sejam antecipadas, principalmente nos momentos mais críticos de expansão das doenças investidas. 
+
+\section{Limitações da Metodologia}
 \label{sec:limitacoes}
 
-Dentre as dificuldades que podem interferir na execução deste projeto de pesquisa,
-as seguintes podem ser citadas:
-1. A escassez de estudos relacionando os assuntos abordados: agrupamento, previsão em
-dados dinâmicos espaço-temporais, grafos dinâmicos e sistemas web de forma integrada;
-2. Obtenção das informações dos focos e casos de dengue geolocalizadas e tempos das
-ocorrências. A extração dos dados semanais requer um processo manual em \cite{simda},
-pois é necessário o usuário selecionar o ano e a semana correspondente;
-3. Visualização dos agrupamentos dinâmicos.
-Para contornar as dificuldades apresentadas pretende-se:
-1. Automatizar a forma de obtenção dos dados;
-2. Utilizar o software Dynagraph como ambiente de suporte à validação e interação com os
-resultados dos métodos de agrupamento espaço-temporal utilizados.
+A primeira dificuldade encontrada foi a escassez de estudos (portais de periódicos da \acrshort{CAPES}, \acrshort{IEEE}, Scielo) relacionados aos assuntos abordados: agrupamento, previsão em dados dinâmicos espaço-temporais, grafos dinâmicos e sistemas web de forma integrada. Além disso, obter as informações dos casos de endemias geolocalizadas e tempos das ocorrências. A extração dos dados semanais requer um processo manual em \cite{simda},
+pois é necessário o usuário selecionar o ano e a semana correspondente.
+
+Para contornar as dificuldades apresentadas na extração dos dados, o processo foi parcialmente automatizado. Outro ponto importante foi utilizar o software \emph{Dynagraph} para visualização dos agrupamentos dinâmico e como ambiente de suporte à validação e interação com os resultados dos métodos de agrupamento espaço-temporal utilizados. Não se pode esquecer das facilidades disponibilizadas na ferramenta Google Maps$^{TM}$ no tratamento dos grupos.
+
+Durante as semanas de baixa incidência de casos de dengue ou chikungunya (menor que 100 casos) a acertividade dos métodos foi bastante comprometida, necessitando para isto de uma verificação mais cuidadosa dos parâmetros mais adequados para estes períodos.  
 
 \section{Trabalhos Futuros}
 \label{sec:trabalhos-futuros}
 
-Em estudos futuros, pretende-se executar o algoritmo em paralelo, a fim de melhorar o desempenho, pois grandes bancos de dados necessitam de alto poder computacional. Além disso, heurísticas mais performáticas podem ser encontradas para determinar os parâmetros de entrada Eps e MinPts do ST-DBSCAN.
+No caso das doenças estudadas, pode-se considerar importante que sejam usados mecanismos de prevenção baseados também na presença dos vetores da doença. Deste modo aumentando a chance de melhor combate às doenças como a Dengue e a Chikungunya aqui estudadas. 
+
+Estudos de parametrização dinâmica para aumentar a acertividade dos métodos espaço-temporais são necessários. Deste modo será possível obter taxas de acerto elevadas nos momentos de prevenção. O estudo estatístico de séries temporais, baseando-se em momentos passados de períoros semelhantes parecerá promissor.
+
+Em estudos futuros, pretende-se executar o algoritmo em paralelo, a fim de melhorar o desempenho, poie à medida que a quantidade de informação em um sistema cresce, ela precisa ser armazenada em algum lugar e de maneira inteligente no espaço e tempo. Além disso, heurísticas com melhor desempenho podem ser encontradas para determinar os parâmetros de entrada ${Eps}$ e ${MinPts}$ do ST-DBSCAN e ST-IGN.
+
+Para o ST-IGN, espera-se encontrar melhores Critérios de Corte da AGM, por exemplo avaliando o conjunto de dados e aplicando algum algoritmo a fim de obter agrupamentos preliminares.
+
+Explorar outros modelos de previsão dinâmica seria válido, a fim de obter melhores resultados dos grupos de previsão, como Redes Neurais Artificiais e Séries Temporais.
+
+Finalmente, espera-se utilizar a ferramenta para outros tipos de doenças epidemiológicas como a Leptospirose, Calazar, Tuberculose e outras; e que o produto final e os resultados obtidos possibilitem a previsão e prevenção de novos casos de endemias para um combate efetivo a essas doenças.
 
 
+%	ok	Inclui símbolo do IFCE na capa;
+%	ok	Falar sobre IFCE na capa;
+%	ok	Falar sobre IFCE na contra-capa;
+%	ok	Falar sobre IFCE na folha de assinaturas;
+%	ok	Melhorar a Introdução;
+%	ok	Alterar título do cap. 2;
+%	ok	Legenda embaixo das figuras (abnt determina em cima);
+%	ok	Evitar frases como “Grandes quantidades” (p.13);
+%	ok	Analisar nome do capítulo 2 Conceitos…;
+%	ok	Em processos… desses grupo (p.19);
+%	ok	Incluir significado de CURE (p.25);
+%	ok	Substituir framework por Estrutura computacional, colocar em itálico (p.50);
+%	ok	Itálico em St-Outlier (p.52);
+%	ok	Referenciar SIMDA e WebDengue (p.72);
+%	ok	Traduzir Data Warehouse (p.73);
+%	ok	Verificar em referências se coloca data de acesso igual a data da referência;
+%	ok	Merge ou mesclar (p.28);
+%	ok	Definir I/O (p.27) e outliers;
+%	ok	Incluir significado de UTM (p.56);
+%	ok	Colocar fig 25 dyn.json em uma única página (p.56);
+%   ok  Alterar localização da imagem do WebDengue
+%   ok  Definir outliers na introdução (pegar da seção outlier espaço-temporal)
+%	ok	Outliers é mencionado antes de ser definido (p.23);
+%	ok	Refazer a frase inicial em algoritmo de birch (p.22);
+%	ok	Analisar algoritmo de birch 1.a.;
+%   ok	Acrescentar hipótese sobre “acertividade da metodologia no tocante do monitoramento da evolução da doença”;
+%   ok  Correções em Conceitos e Revisão bibliográfica
 
+% citeautoronline
+%	ok	Retirar parênteses de referência (p.25);
+%	ok	Remover parênteses de referência (p.22) Birch;
+%	ok	Remover parênteses de referência (p.32);
+%	ok	Remover parênteses de referência (p.35);
+%	ok	Remover parênteses de referência (p.40);
+%	ok	Remover parênteses de referência (p.54) 2x;
+
+%	ok	Incluir lista de siglas;
+%   ok  Referenciar siglas;
+
+%	ok	Trabalhos relacionados (p.65) verificar item como sendo trabalho relacionado;
+%	ok	Analisar Níveis de acertividade, constantes no resumo? (p.82) - conclusão;
+
+%   -   Na contextualizacao reporte sobre as formas de trabalho espaço-temporal. (Kisilevich2009) 
+
+%	-	Incluir/apresentar cubo analítico no trabalho escrito;
+%	-	Analisar/incluir gráfico com resultado de 98%;
+%   -   Acrescentar imagem genérica da metodologia (atualmente só tem do SAD)
+
+%	-	DISCUSSÃO: Discutir resultados mostrados no gráfico de barra;
+%   -   DISCUSSÃO: Incluir na discussão o motivo de utilizar os valores/parâmetros nos testes - 1km, 500m...
+%   -   DISCUSSÃO: Incluir discussão \subsection{Comparação dos resultados: ST-DBSCAN e ST-IGN}
+%   -   DISCUSSÃO: Analisar qual o "melhor" algoritmo
+%   -   DISCUSSÃO: Descrever função objetivo e incluir nas discussões
+%   -   DISCUSSÃO: Analisar discussões em outros trabalhos
+
+%   -   Ler novos .pdfs
+%   -   Ler tese Detection of Spatial and Spatio-Temporal Clusters (Daniel B. Neill)
+%   -   Ler 10.1.1.352.3123_Survey_OutlierDetectionTemporalData.pdf
+%   -   Ler guptaOutlierDetectioninTemporalData_Curso.pdf
+%   -   Ler sobre CDC e TDR https://www.who.int/tdr/en/
+%   -   Ler DENGUE Integracao_de_sistemas_computacionais_e_modelos_lo
+
+%   -   MELHORAR assunto sobre outliers
+%   -   MELHORAR Trabalhos Relacionados principalmente Estudos Relacionados
+%   -   MELHORAR conclusão/analisar se hipóteses correspondem a conclusão
+%	-	MELHORAR didática na apresentação
