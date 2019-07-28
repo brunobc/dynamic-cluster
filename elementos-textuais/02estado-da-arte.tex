@@ -797,6 +797,8 @@ A figura \ref{fig:ign_avaliar_rotular} apresenta o processo de rotulação do pr
 \section{Detecção de \textit{outliers} espaço-temporais}
 \textit{Outliers} são tradicionalmente definidos como instâncias que são notavelmente diferentes da maioria das instâncias no conjunto de dados. Em aplicações espaço-temporais, detectar \textit{outliers} ajuda a identificar fenômenos interessantes, mas raros, por exemplo, uma trajetória irregular tomada por um veículo de táxi ou a mudança das frequências de inundações e secas em determinadas áreas devido a mudanças climáticas ou ações humanas que mudam a ecologia de uma região \cite{Atluri:2018}.
 
+A diferença entre a detecção de agrupamento e de detecção de \textit{outliers} é que, enquanto a detecção de \textit{outliers} tipicamente concentra-se em pontos de dados individuais e verifica se cada ponto é \textit{outlier}, a detecção de agrupamento se concentra em encontrar grupos ou padrões que são \textit{outliers} espaciais \cite{DanielNeill2006}.
+
 Um aspecto a considerar por trás da detecção de \textit{outliers} espaço-temporais é que isso reflete na descontinuidade em atributos não espaço-temporais dentro de uma vizinhança espaço-temporal \cite{cheng:2014}.
 
 Alguns estudos descobrem \textit{outliers} considerando somente seus vizinhos temporais, enquanto outros trabalhos dizem respeito a \textit{outliers} apenas em relação a seus vizinhos espaciais. Combinando essas duas noções, um \textit{outlier} espaço-temporal (\textit{\acrshort{ST-OUTLIER}}) é um objeto espaço-temporal cujos atributos não-espaciais e não-temporais são significativamente diferentes dos atributos dos outros objetos em suas vizinhanças espaciais e temporais \cite{gupta:2014}.

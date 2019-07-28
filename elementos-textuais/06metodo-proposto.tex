@@ -6,15 +6,26 @@ Este capítulo apresenta a metodologia computacional empregada nesta pesquisa, q
 
 \section{Metodologia Computacional para Previsão de Grupos}
 
-A figura \ref{fig:metodologia} apresenta a representação do modelo metodológico (metodologia) empregada para tornar factível a leitura, armazenamento de dados espaço-temporais de casos de dengue e chikungunya. 
-
-A figura mostra um \acrlong{DW} composto de um \acrfull{BD-SQL} (\acrfull{SQL}) onde são colocadas as informações dos casos, conforme figura \ref{fig:jsondynagraph}, e o visualizador e editor Dynagraph que permite transformar tais dados em informações úteis no espaço-tempo, como é mostrado nas figuras \ref{fig:jsondynagraph} e \ref{fig:edCaMenu}.
-
-O banco de dados é alimentado através de um sistema, por exemplo SIMDA e WebDengue, e determinado por um especialista. Para compor uma solução adequada, outro especialista decide o modelo de previsão espaço-temporal baseado no banco de dados e os parâmetros de entrada do modelo. Com isso, uma solução é fornecida ao Dynagraph, que visualiza no espaço-tempo os grupos de previsão. E finalmente, com as informações geradas pelo \acrshort{DW}, outro especialista em tomada de decisão determina onde os agentes de saúde devem atuar para um combate mais efetivo às endemias.
+A figura \ref{fig:sad} apresenta a representação do modelo metodológico (metodologia) empregada para tornar factível a leitura, armazenamento, visualização e análise de dados espaço-temporais. A \ref{fig:metodologia} representa o \acrshort{SAD} dessa metodologia nos casos de dengue e chikungunya, utilizando o Dynagraph para análise dos dados e a base de dados do \citeonline{simda}.
 
 \begin{figure}[!ht]
 	\centering	
-	\Caption{\label{fig:metodologia} Metodologia Computacional}
+	\Caption{\label{fig:sad} Metodologia Computacional}
+	\UECEfig{}{
+		\includegraphics[width=14cm]{figuras/sad.png}
+	}{
+		\Fonte{Elaborado pelo autor}
+	}
+\end{figure}
+\FloatBarrier
+
+A figura \ref{fig:metodologia} mostra um Armazém de Dados composto de um \acrfull{BD-SQL} (\acrfull{SQL}) onde são colocadas as informações dos casos, conforme figura \ref{fig:jsondynagraph}, e o visualizador e editor Dynagraph que permite transformar tais dados em informações úteis no espaço-tempo, como é mostrado nas figuras \ref{fig:jsondynagraph} e \ref{fig:edCaMenu}.
+
+O banco de dados é alimentado através de um sistema, por exemplo SIMDA e WebDengue, e determinado por um especialista. Para compor uma solução adequada, outro especialista decide o modelo de previsão espaço-temporal baseado no banco de dados e os parâmetros de entrada do modelo. Com isso, uma solução é fornecida ao Dynagraph, que visualiza no espaço-tempo os grupos de previsão. E finalmente, com as informações geradas pelo Armazém de Dados, outro especialista em tomada de decisão determina onde os agentes de saúde devem atuar para um combate mais efetivo às endemias.
+
+\begin{figure}[!ht]
+	\centering	
+	\Caption{\label{fig:metodologia} Sistema de Apoio a Decisão Espaço-Temporal}
 	\UECEfig{}{
 		\includegraphics[width=15cm]{figuras/MetodologiaDissertacao.png}
 	}{
@@ -242,4 +253,78 @@ As tabelas \ref{tab:dengue20171} e \ref{tab:dengue20172} a seguir exibem um comp
     }
 \end{table}
 
+\section{Resultados e Discussão}
+\label{sec:discussao}
+% discutir, interpretar e analisar os Resultados
 Uma das vantagens apresentadas pelo método ST-IGN sobre o ST-DBSCAN é a possibilidade de identificar grupos que não possuem uma forma regular, além da hiper-esférica (ou esférica/circular). Por isso, fez-se necessário a utilização de mais opções de parâmetros para a predição de casos de endemias (número de semanas, distância máxima entre os casos e número de semanas anteriores a semana em análise, por exemplo).
+
+% Incluir na discussão o motivo de utilizar os valores/parâmetros nos testes - 1km, 500m...
+
+
+% Resultados:
+As figuras \ref{fig:stdbscan2019dengue250} e \ref{fig:stdbscan2019chi250} apresentam gráficos sobre as ocorrências de casos humanos de dengue reportados em \cite{simda} no município de Fortaleza, no ano de 2019, levando em consideração as 4 semanas anteriores à semana do grupo de previsão. A variável Eps de agregação do ST-DBSCAN e ST-IGN é de 250 metros e para caracterizar um grupo se considera pelo menos 2 casos humanos. A cor verde nos gráficos representa os casos dentro dos grupos de previsão e azul os casos fora. As ocorrências de casos de chikungunya em 2019 não foram significativas para analisar grupos de previsão espaço-temporal. Este resultado se assemelha as ocorrências de 2018.
+
+% Figuras:
+\begin{figure}[!ht]
+	\centering	
+	\Caption{\label{fig:stdbscan2019dengue250} ST-DBSCAN: Dengue/2019, 4 semanas, Eps=250m, MinPts=2}
+	\UECEfig{}{
+		\includegraphics[width=15cm]{figuras/predicao/2019/Pred_ST-Dbscan_Dengue_2019_percent_250.png}
+	}{
+		\Fonte{Elaborado pelo autor}
+	}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+	\centering	
+	\Caption{\label{fig:stdbscan2019chi250} ST-IGN: Dengue/2019, 4 semanas, Eps=250m, MinPts=2}
+	\UECEfig{}{
+\includegraphics[width=15cm]{figuras/predicao/2019/Pred_ST-IGN_Dengue_2019_percent_250.png}
+	}{
+		\Fonte{Elaborado pelo autor}
+	}
+\end{figure}
+\FloatBarrier
+
+% Discussão:
+
+
+% Incluir imagem com grupos dos dois algoritmos de uma semana qualquer e com relatórios ao lado
+As figuras \ref{fig:resultadoSemana132017} e \ref{fig:resultadoSemana132017Comparativo} representam os resultados de predição espaço-temporal na semana 13 do ano de 2017, sobre ocorrência de casos humanos de dengue nos algoritmos ST-DBScan e ST-IGN.
+% Discussão:
+
+\begin{figure}[!ht]
+	\centering	
+	\Caption{\label{fig:resultadoSemana132017Comparativo} Resultados ST-DBSCAN e ST-IGN: Dengue - 2017 Semana 13}
+	\UECEfig{}{
+\includegraphics[width=10cm]{figuras/DENGUE2017Semana13_250.png}
+	}{
+		\Fonte{Elaborado pelo autor}
+	}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+	\centering	
+	\Caption{\label{fig:resultadoSemana132017} Resultados ST-DBSCAN e ST-IGN: Dengue - 2017 Semana 13}
+	\UECEfig{}{
+\includegraphics[width=12cm]{figuras/DENGUE2017Semana13Algoritmos.png}
+	}{
+		\Fonte{Elaborado pelo autor}
+	}
+\end{figure}
+\FloatBarrier
+
+% Discutir resultados mostrados no gráfico de barra;
+% Analisar qual o "melhor" algoritmo
+% Descrever função objetivo e incluir nas discussões
+% Discussão em STCrime_ComparisonofMethods / GeoComputacionalSTAlgorithm_DENGUETAIWAN__NATURE / GeoComputacionalSTAlgorithm_DENGUETAIWAN__NATURE_IMPORTANTE
+% Os resultados obtidos sugerem que...
+
+% analisar se hipóteses correspondem a conclusão:
+%   É viabilizado o armazenamento dos dados por uma ferramenta de extração e armazenamento de dados automatizada seguindo a estrutura de dados do Dynagraph.
+%   É exequível a integração de um editor de características ao Dynagraph, que é um software extensível.	
+%   É realizável a utilização do modelo proposto de agrupamentos em grafos dinâmicos em um ambiente Web.	
+%   É possível a criação de um algoritmo capaz de sugerir agrupamentos naturais dinâmicos espaço-temporais de casos de doenças como dengue e chikungunya geolocalizados no tempo.
+%   É possível a avaliação da acertividade da metodologia no tocante do monitoramento da evolução da doença.

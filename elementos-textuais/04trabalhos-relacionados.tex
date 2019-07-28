@@ -1,10 +1,29 @@
 \section{Estudos Relacionados e Escolha de Métodos Dinâmicos}
 \label{sec:trabalhos-relacionados}
 
-% TODO: melhorar este capítulo - Pesquisa que não fizemos
+A potência de qualquer tipo de abordagem de rede reside na capacidade de simplificar um sistema complexo para que se possa compreender melhor a sua função como um todo. Às vezes, é vantajoso, no entanto, incluir mais informação em um grafo simples do que ter apenas nós e ligações. Adicionando informações sobre tempos de interações podem fazer previsões e entendimentos mais precisos. A desvantagem, contudo, é que não há tantos métodos disponíveis, em parte porque as redes temporais é um campo relativamente novo, em parte porque é mais difícil de desenvolver tais métodos em comparação com as redes estáticas \cite{holme:colloquium}.
 
 \subsection{Estudos Relacionados}
 \label{subsec:estudos}
+
+\citeautoronline{DanielNeill2006} desenvolveu um framework com novos métodos estatísticos e computacionais para a detecção automática de \emph{clusters} espaciais e espaço-temporais. Esse framework de “varredura espacial generalizada” é uma estrutura flexível baseada em um modelo para detecção de \emph{cluster} de forma precisa e computacionalmente eficiente em diversos domínios de aplicação, através do desenvolvimento do algoritmo de “varredura espacial rápida” e novos métodos Bayesianos de detecção de \emph{clusters}. Esses métodos de detecção de \emph{cluster} foram aplicados à detecção de epidemias de doenças emergentes. Por exemplo, no domínio da saúde pública, pode-se querer detectar agrupamentos espaciais de casos de doença (ou alguma quantidade observável relacionada, como visitas a hospitais ou vendas de medicamentos) que são indicativos de uma epidemia emergente.
+
+\citeautoronline{Zhicheng:2019} focam nos métodos de agrupamento onde os eventos possuem os tipos de dados espaço-temporal, analisa que esses dados podem ser classificados em três categorias: ponto, linha e polígono, e os métodos de agrupamento existentes são baseados em testes de hipóteses e métodos de agrupamento particionais. Os dados espaço-temporal são mais complicados do que outros tipos de dados devido à dimensão adicional de tempo para a análise espacial bidimensional.
+
+\citeautoronline{Shekhar2011} revisam técnicas e ferramentas computacionais recentes na mineração de dados espaço-temporais, focando em vários tipos de padrões: \textit{outliers}, acoplamento, previsão, particionamento e sumarização, \textit{hotspot} e detecção de mudanças. Em comparação com outras pesquisas na literatura, esse artigo enfatiza os fundamentos estatísticos da mineração de dados espaço-temporais e fornece uma cobertura abrangente de abordagens computacionais para vários tipos de padrões. Também listam ferramentas de \textit{software} populares para análise de dados espaço-temporais.
+
+\citeautoronline{eric2014} aplicam uma extensão espacial e temporal do algoritmo \acrfull{EDK} para mapear \textit{clusters} espaço-temporais de dengue em Cali, Colômbia, no primeiro semestre de 2010. Para determinar o impacto nos \textit{clusters} espaço-temporais causado por erros de geocodificação assim como erros no tempo estimado da infecção, a localização de cada caso e o tempo relatado de infecção são analisados usando dados empíricos para controlar a magnitude do distúrbio da doença. Essa pesquisa usa uma abordagem de computação paralela, que permite que o problema seja resolvido dentro de um prazo mais gerenciável. Os dados gerados são visualizados usando um ambiente 3D, revelando períodos e áreas de ocorrências de alta densidade de dengue. Os volumes de densidade mínima e máxima são gerados para cada um dos \textit{clusters} predominantes na área.
+
+\citeautoronline{ping2012} aborda três aspectos dos estudos de saúde: detecção de \textit{clusters} de doenças espaciais, mapeamento da doença espaço-temporal e planejamento de serviços de saúde. A pesquisa propõe o uso do algoritmo \acrshort{RSScan} (\emph{\acrlong{RSScan}}) para detectar \textit{clusters} de doenças em formas arbitrárias. Para explorar os padrões espaço-temporais dos riscos de incidência de câncer de pulmão na Geórgia entre 2000 e 2007, sete modelos bayesianos hierárquicos são desenvolvidos e comparados ao nível do setor censitário usando um período de dois anos como unidade temporal. Dois modelos de transporte que abordam o problema do local de cobertura máximo capacitado modular (\acrshort{MCMCLP}) são propostos e usados para posicionar otimamente ambulâncias para a Região 10 dos \acrfull{EMS} na Geórgia.
+
+\citeautoronline{Mitsa:2010} abrange a teoria da mineração de dados temporais, bem como aplicações em uma variedade de campos, e seus objetivos são: fornecer os conceitos básicos, bem como o estado da arte e discutir as aplicações e avanços do estado da arte da mineração de dados temporais. Os conceitos básicos estudados são:
+\begin{itemize}
+\item Incorporação de temporalidade em bancos de dados.
+\item Representação de dados temporais.
+\item Classificação de dados temporais e agrupamento.
+\item Descoberta de padrão temporal.
+\item Predição.
+\end{itemize}
 
 \subsection{Escolha dos Métodos Dinâmicos}
 \label{subsec:metodos-escolhidos}
