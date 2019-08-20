@@ -3,7 +3,7 @@
  % Clustering Dynamic Spatio-Temporal Patterns in the Presence of Noise and Missing Data: https://www.ijcai.org/Proceedings/15/Papers/365.pdf
  %TODO --- Introduzir o processo de previsão de agrupamentos espaço temporais ---
  
-Para redes dinâmicas, o foco é tipicamente em uma classe de redes e em questões referentes às estrutura dessa classe de rede, como a estrutura evoluiu e como isso afeta sistemas dinâmicos na rede. As redes temporais normalmente são mais orientadas a dados - onde se investiga um conjunto de dados, suas estruturas e como, por exemplo, surtos epidêmicos se comportariam sobre ele \cite{holme:colloquium}.
+Para redes dinâmicas, o foco é tipicamente em uma classe de redes e em questões referentes às estrutura dessa classe de rede, como a estrutura evoluiu e como isso afeta sistemas dinâmicos na rede. As redes temporais normalmente são mais orientadas a dados - onde se investiga um conjunto de dados, suas estruturas e como, por exemplo, surtos epidêmicos se comportariam sobre eles \cite{holme:colloquium}.
 
 Uma observação sobre endemias é que casos e focos destes tendem a estar mais próximos do que distantes no espaço e no tempo. Por exemplo, o casos de dengue de amanhã tem mais probabilidade de serem semelhantes aos casos de hoje do que de um mês atrás ou mais. Da mesma forma, os casos num raio de 300 metros tendem a ser mais semelhantes do que os casos a 10 quilômetros ou mais de distância. Estas observações são referidas como dependência temporal e espacial.
 
@@ -11,6 +11,14 @@ Uma observação sobre endemias é que casos e focos destes tendem a estar mais 
 
 A aceitação de modelos espaço-temporais tem sido tradicionalmente limitada pela escassez de conjuntos de dados espaço-temporais em grande escala \cite{Griffith2010}. Essa situação foi revertida nas últimas décadas e com grande quantidade de dados exige-se métodos rápidos e eficazes para lidar com eles. Os modelos espaço-temporais podem ser divididos em duas categorias: métodos estatísticos ou paramétricos e métodos de aprendizagem de máquina ou não-paramétricos.
 
+O problema de predição espaço-temporal foi descrito por \cite{shekharetal2015} como segue: considere-se itens de dados espaço-temporais, com um conjunto de variáveis exploratórias (também chamados de atributos exploratórios ou características) e um conjunto de variáveis dependentes (também chamadas de variáveis alvo), o problema de predição espaço-temporal objetiva conhecer um modelo que possa predizer a variável dependente das variáveis exploratórias. Quando a variável dependente é discreta, o problema é chamado de \emph{classificação espaço-temporal}. Quando a variável dependente é contínua, o problema é de \emph{regressão espaço-temporal}. Um exemplo do problema de classificação espaço-temporal é o de classificação de imagens de sensoriamento remoto sobre fotos instantêneas retiradas no tempo, onde 
+as variáveis exploratórias podem consistir de várias bandas espectrais (vermelho, verde, azul, infra-vermelho) e a variável dependente é uma classe temática como regiões de uma floresta, região urbana, região de rios, lagos ou oceanos, ou mesmo regiões de agricultura. Exemplos de regressão espaço-temporal incluem a previsão anual de milho, a previsão da temperatura diária em diferentes localidades.
+
+Ainda conforme \cite{shekharetal2015}, as aplicações  estatísticas comuns  na predição espaço-temporal por regressão são: Regressão espaço-temporal autorregressiva - \acrshort{STAR} (as dependências do termo de erro ou a variável dependente são diretamente modeladas da equação de regressão); Kriging espaço-temporal (é uma técnica geoestatística onde se faz predições nas localidades com observações desconhecidas, a partir das localidades com observações conhecidas); modelos hierárquicos dinâmicos espaço-temporais (objetivam construir um modelo de processo dinâmico com um \emph{framework} baysiano hierárquico).
+
+Conforme \cite{Zhicheng:2019} modelos baseados em teste de hipóteses ou modelos que determinam a probabilidade de uma certa hipótese ser verdadeira ou não, que possuem características espaço-temporais de agregação foram elaborados ao longo dos anos. Dentre os diversos propostos, destacou-se principalmente a \emph{Scan Statistics} como a ferramenta de modelagem mais bem sucedida. A \emph{scan statistics} proposta por \citeautoronline{Glaz2001}, trata-se de um método que busca uma janela exploratória circular com raios diferentes a qual é usada para encontrar grupos circulares de duas dimensões sobre os dados espaciais com um teste de significância estatística. Um raio apropriado é importante para evitar grupos muito grandes ou muito pequenos senão o resultado não teria nenhum significado e seria muito difícil de ser interpretado. Normalmente um limite superior do círculo não poderia incluir mais que 50\% de todo o conjunto de dados. Cada ponto poderia ser o centro de um círculo que contenha um número diferente de pontos. Com uma \emph{scan statitstic} espacial, a hipótese nula é que a distribuição espaço-temporal dos eventos é aleatória. O cilindro da janela \emph{scan} foi então modificado com diferentes raios e alturas, buscando-se a  taxa logarítmica mais apropriada entre todos os círculos na região de agrupamento.
+
+A desvantagem dos métodos baseados em \emph{scan statistics} é que os grupos não são ajustáveis a formas distintas e arbitrárias sobre dados espaço-temporais, no entanto mais recentemente foram propostas técnicas para flexibilizar o formato dos grupos usando \emph{softwares} específicos como o FLEXSCAN \cite{Tango2005}. Como será visto mais adiante neste texto, \cite{DanielNeill2006} fez um trabalho que tornou os métodos de agrupamento espaciais e espaço-temporais muito competitivos, especialmente nas áreas \emph{scan statistics} e modelos Bayesianos de agrupamento. \citeautoronline{DanielNeill2006} propôs um \emph{framework} para detectar grupos em detalhes. O resultado dos estudos de caso selecionados mostraram o bom desempenho do \emph{framework} em relação a estudos anteriores. Porém ainda sujeitos às limitações dos métodos estatísticos \cite{Zhicheng:2019}.   
 
 \section{Agrupamento de dados baseado em predição}
 
@@ -23,7 +31,6 @@ Na previsão de séries temporais, os dados são informações históricas obtid
 \section{Método de Lahiri}
 \label{lahiri}
 \citeautoronline{lahiri2007} apresentam um algoritmo de predição em redes temporais, e que usa a ideia de que certas interações sinalizam a ocorrência de outros em algum momento no futuro. Através de análises estatísticas o algoritmo mede o atraso entre as interações, e com isso pode-se prever quando certas interações vão ocorrer com base em observações passadas e atuais. Propõe-se a utilização de subgrafos frequentes e discute como identificar subgrafos que persistem em redes temporais.
-
 \citeautoronline{lahiri2008} em seguida propõe um novo problema de mineração de dados para redes dinâmicas: detecção de todos os padrões de interação que ocorrem em intervalos de tempo regulares.
 
 \section{O modelo Dynagraph}
@@ -34,12 +41,10 @@ Trata-se de um poderoso instrumento de visualização e representação de event
 
 \subsection{Estrutura de Dados}
 
-A estrutura de dados usada no Dynagraph segue a notação de Objeto Javascript (\acrfull{JSON}), que é um formato de texto de intercâmbio de dados \cite{douglas}. A figura \ref{fig:jsondynagraph} mostra como é essa estrutura seguindo três objetos principais: ``metadata'', ``binding'' e ``data''.
-
+A estrutura de dados usada no Dynagraph segue a notação de Objeto Javascript (\acrfull{JSON}), que é um formato de texto de intercâmbio de dados \cite{douglas}. A figura \ref{fig:jsondynagraphVertex} mostra como é essa estrutura seguindo três objetos principais: ``metadata'', ``binding'' e ``data''.
 Em ``metadata'' são definidos os campos para utilização de qualquer identificador, por exemplo: é possível utilizar ``ini'' e ``fim'',
 que representam o tempo inicial e final de um elemento, no lugar de ``start'' e ``end'' respectivamente.
-
-Na figura \ref{fig:jsondynagraph}, em ``binding'' são definidas as características dos vértices e arestas.
+Na figura \ref{fig:jsondynagraphVertex}, em ``binding'' são definidas as características dos vértices e arestas.
 
 Seguindo o exemplo da mesma figura, ``vertex'' poderá
 ser do tipo ``v1'', ``v2'' e ``v3'', onde cada tipo contém informações da forma do vértice. Essa forma pode ser uma imagem no formato
@@ -55,17 +60,22 @@ ser do tipo ``v1'', ``v2'' e ``v3'', onde cada tipo contém informações da for
 
 A aresta, ou ``polyline'', segue uma estrutura semelhante à do ``vertex'', porém com algumas particularidades como repetição de um símbolo
 ao longo da aresta, e uma customização no campo ``path'' seguindo a notação SVG\footnote{\label{note} Scalable Vector Graphics - é uma forma de descrever de forma vetorial desenhos e gráficos bidimensionais}.
-
 Em ``data'' são definidos os elementos do grafo, os tempos de início e fim de cada elemento ou tempo de existência. No caso dos vértices, a posição de cada elemento pode ser escrita no formato \acrshort{UTM} (\acrlong{UTM}) ou latitude e longitude.
 O tipo de cada elemento, descrito em ``binding'', e no caso das arestas, são definidos os pontos de origem e destino.
 
-Na figura \ref{fig:jsondynagraph} vemos a estrutura de construção de um grafo dinâmico. Os campos ``metadata'' e ``binding'' foram omitidos para evidenciar o objeto ``data''.
-\FloatBarrier
-\lstinputlisting[language=Java, basicstyle=\tiny]{figuras/new.json}
-\begin{figure}[!htbp]
+Nas figuras \ref{fig:jsondynagraphVertex} e \ref{fig:jsondynagraphAresta} vemos a estrutura de construção de um grafo dinâmico. Os campos ``metadata'' e ``binding'' foram omitidos para evidenciar o objeto ``data''.
+
+\begin{figure}[!ht]
   \caption{Estrutura JSON usada pelo Dynagraph}
-  \label{fig:jsondynagraph}
+  \label{fig:jsondynagraphVertex}
 \end{figure}
+\lstinputlisting[language=Java, basicstyle=\tiny]{figuras/vertex.json}
+
+\begin{figure}[!ht]
+  \caption{Estrutura JSON usada pelo Dynagraph}
+  \label{fig:jsondynagraphAresta}
+\end{figure}
+\lstinputlisting[language=Java, basicstyle=\tiny]{figuras/aresta.json}
 
 \subsection{Editor de Características}
 

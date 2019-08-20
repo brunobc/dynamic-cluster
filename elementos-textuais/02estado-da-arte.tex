@@ -6,11 +6,13 @@ Uma visão geral sobre agrupamentos é apresentada na seção \ref{agrupamentos}
 \section{Agrupamentos}
 \label{agrupamentos}
 
-A técnica de agrupamento, também chamada de \textit{clustering}, é uma das técnicas de mineração de dados mais comuns e é usada para descobrir padrões de distribuição nos dados. O agrupamento é feito com base na similaridade das características e na posição dos objetos ou indivíduos. Dessa maneira, o objetivo é que os objetos/indivíduos do mesmo grupo sejam muito similares entre si e muito diferentes dos objetos de outros grupos.
+A técnica de agrupamento, também chamada de \textit{clustering}, é uma das técnicas de mineração de dados mais comuns e é usada para descobrir padrões de distribuição nos dados. O agrupamento é feito com base na similaridade das características e na posição dos objetos ou indivíduos. Dessa maneira, o objetivo é que os objetos/indivíduos do mesmo grupo sejam muito similares entre si e muito diferentes dos objetos de outros grupos. 
 
-A medida de similaridade é definida por métricas. Uma métrica é uma medida que relaciona dois indivíduos quaisquer de um conjunto de dados a partir de suas características comuns. Uma métrica para que exista tem que possuir propriedades matemáticas tais como: identidade (indivíduos de características idênticas têm similaridade nula), nulidade (indivíduos não podem ter características nulas) e triangularidade (a similaridade entre dois indivíduos $a,b$ é sempre menor ou igual à soma das similaridades entre $a,c$ e $c,b$). Exemplos de métricas podem ser: Minkowski, Mahalanobis, dentre outras \cite{Minkowski:2012}, \cite{Mahalanobis:1993}.
+Diz-se similar se um indivíduo tem características próximas a um grupo de individuos (Similaridade), diz-se dissimilar quando indivíduos são diferentes entre si (Dissimilaridade).
 
-Essa técnica é muito utilizada para dados estáticos. No entanto, há poucos trabalhos no âmbito espaço-temporal onde os dados estão na forma de campos espaço-temporais contínuos e os agrupamentos são dinâmicos. Além disso, os dados espaço-temporais originados por satélites em órbita terrestre, telefones celulares e outros sensores tendem a conter muitos ruídos, são incompletos e heterogêneos, gerando tarefas mais complexas e desafiadoras, requerendo algoritmos cada vez mais poderosos \cite{faghmous2013}, \cite{Mitsa:2010}.
+A medida de similaridade ou dissimilaridade é definida por métricas. Uma métrica é uma medida que relaciona dois indivíduos quaisquer de um conjunto de dados a partir de suas características comuns. Uma métrica para que exista tem que possuir propriedades matemáticas tais como: identidade (indivíduos de características idênticas têm dissimilaridade nula), nulidade (indivíduos não podem ter características nulas) e triangularidade (a dissimilaridade entre dois indivíduos $a,b$ é sempre menor ou igual à soma das dissimilaridades entre $a,c$ e $c,b$). Exemplos de métricas podem ser: Minkowski - distância Euclideana, Manhattan, e outras (dissimilaridade), Mahalanobis (similaridade), dentre outras \cite{Minkowski:2012}, \cite{Mahalanobis:1993}.
+
+Técnicas de agrupamento com as métricas indicadas são muito utilizadas para tratar dados estáticos. No entanto, há poucos trabalhos no âmbito espaço-temporal onde os dados estão na forma de campos de registros espaço-temporais contínuos e os agrupamentos são dinâmicos. Além disso, os dados espaço-temporais originados por satélites em órbita terrestre, telefones celulares e outros sensores tendem a conter muitos ruídos, são incompletos e heterogêneos, gerando tarefas mais complexas e desafiadoras, requerendo algoritmos cada vez mais especializados \cite{faghmous2013}, \cite{Mitsa:2010}.
 
 
 Agrupamentos dinâmicos podem mudar seu tamanho, forma, localização e propriedades estatísticas ao longo do tempo. Embora os agrupamentos possam se mover ou mudar de forma, existem vários pontos que não alteram as associações de grupos por um período de tempo. Tendo isso em vista é possível extrair de forma autônoma agrupamentos dinâmicos em dados espaço-temporais contínuos que podem conter valores, ruídos ou características muito variáveis.
@@ -403,9 +405,9 @@ No gráfico \ref{fig:IGNGraphic} podemos ver a formação de dois grupos ao remo
 
 \begin{figure}[!ht]
 	\centering
-	\Caption{\label{fig:IGNGraphic} Visão da curva ${f(x)}$}
+	\Caption{\label{fig:IGNGraphic} AGM - Visão da curva ${f(x)}$}
 	\UECEfig{}{
-		\includegraphics[width=12cm]{figuras/ign/graphicIGN.png}
+		\includegraphics[width=10cm]{figuras/ign/graphicIGN.png}
 	}{
 		\Fonte{Elaborado pelo autor}
 	}
@@ -544,7 +546,7 @@ As figuras \ref{fig:dbscanStep1}, \ref{fig:dbscanStep2} e \ref{fig:dbscanStep3} 
 	\centering
 	\Caption{\label{fig:dbscanStep2} \acrshort{DBSCAN} - Pontos que estejam dentro do raio de outro ponto estão no mesmo grupo}
 	\UECEfig{}{
-		\includegraphics[width=9cm]{figuras/dbscanStep2.png}
+		\includegraphics[width=7cm]{figuras/dbscanStep2.png}
 	}{
 		\Fonte{Elaborado pelo autor}
 	}
@@ -554,7 +556,7 @@ As figuras \ref{fig:dbscanStep1}, \ref{fig:dbscanStep2} e \ref{fig:dbscanStep3} 
 	\centering
 	\Caption{\label{fig:dbscanStep3} \acrshort{DBSCAN} - Identificação dos \textit{outliers}}	
 	\UECEfig{}{
-		\includegraphics[width=10cm]{figuras/dbscanStep3.png}
+		\includegraphics[width=7cm]{figuras/dbscanStep3.png}
 	}{
 		\Fonte{Elaborado pelo autor}
 	}
@@ -587,10 +589,12 @@ Estas técnicas podem ser divididas em semi-supervisionadas e não-supervisionad
 \section{Agrupamentos Dinâmicos}
 Um agrupamento dinâmico é definido como sendo um conjunto de indivíduos de alta similaridade que se mantêm unido ao longo do tempo, caracterizado por um certo número de indivíduos que mantêm a identidade do grupo. O processo de classificação de agrupamentos dinâmicos é a metodologia que identifica tais grupos que se constroem e se desfazem no tempo, tal metodologia identifica classes naturais e ao mesmo tempo as relaciona a outras classes em similaridade que ocorrem antes e depois delas no tempo. Tal relação precisa ser bem estabelecida e consistente para que se perceba os movimentos evolutivos no tempo.
 
+O particionamento espaço-temporal foi definido por \cite{shekharetal2015} como o processo de agrupamento de itens com dados similares, e particionando-os no espaço-tempo. A \emph{sumarização espaço-temporal} provê uma representação compacta dos dados espaço-temporais, por exemplo: eventos de acidente de tráfego numa estrada podem ser sumarizadas em várias rotas principais que cobrem a maioria dos acidentes. A \emph{sumarização espaço-temporal} é na maior parte das vezes feita após ou juntamente ao processo de particionamento tal que objetos em cada partição podem ser sumarizados por uma estatística agregada ou objetos representativos.
+
 Várias formas diferentes de tipos de dados espaço-temporais estão disponíveis em aplicativos reais. Embora todos compartilhem a disponibilidade de algum tipo de aspecto espacial e temporal, a extensão dessas informações e a maneira como elas são relacionadas podem se combinar com vários tipos diferentes de objetos de dados \cite{Kisilevich2009}. Com base em duas dimensões, é dada uma possível classificação destes tipos de dados:
 
 \begin{itemize}
-	\item a dimensão temporal descreve em que medida a evolução do objeto é capturada pelos dados. O caso mais básico consiste em objetos que não evoluem, onde apenas um \textit{snapshot} estático de cada objeto está disponível. Em contextos um pouco mais complexos, cada objeto pode alterar seu status, mas apenas seu valor mais recente é conhecido (um \textit{snapshot} atualizado), portanto, sem qualquer conhecimento sobre seu histórico passado. No caso extremo é onde o histórico completo do objeto é mantido, formando assim uma série temporal do status que ele percorreu;
+	\item a dimensão temporal descreve em que medida a evolução do objeto é capturada pelos dados. O caso mais básico consiste em objetos que não evoluem, onde apenas um \textit{snapshot} estático de cada objeto está disponível. Em contextos um pouco mais complexos, cada objeto pode alterar seu status, mas apenas seu valor mais recente é conhecido (um \textit{snapshot} atualizado), portanto, sem qualquer conhecimento sobre seu histórico. No caso extremo é onde o histórico completo do objeto é mantido, formando assim uma série temporal do status que ele percorreu;
 
 	\item a dimensão espacial descreve se os objetos considerados estão associados a um local fixo (por exemplo, as informações coletadas por sensores fixados no solo) ou podem se mover, ou seja, sua localização é dinâmica e pode mudar no tempo.
 \end{itemize}
@@ -626,15 +630,15 @@ ${DensityFactor(C) = 1\big/\left [   \frac{\sum_{p\in C}DensityDistance(p)}{|C|}
 
 Com esse fator é possível evitar problemas de agrupamentos com grande variação de densidade, onde os grupos são pequenos e muito densos ou grandes e pouco densos.
 
-Uma grande diferença entre o \acrshort{DBSCAN} e o \acrshort{ST-DBSCAN} é a utilização de um segundo parâmetro EPS, onde é usado para medir a similaridade de valores não espaciais. Nesta pesquisa usa-se o tempo como EPS de valor não espacial. Para dois pontos serem considerados vizinhos eles devem respeitar os limites de espaço e tempo parametrizados por EPS1 e EPS2 \cite{Birant2007STDBSCANAA}.
+Uma diferença entre o \acrshort{DBSCAN} e o \acrshort{ST-DBSCAN} é a utilização de um segundo parâmetro EPS, onde é usado para medir a similaridade de valores não espaciais. Nesta pesquisa usa-se o tempo como EPS de valor não espacial. Para dois pontos serem considerados vizinhos eles devem respeitar os limites de espaço e tempo parametrizados por EPS1 e EPS2 \cite{Birant2007STDBSCANAA}.
 
 \begin{enumerate}
 	\item O algoritmo começa com o primeiro ponto ${p}$ no banco de dados D.
-	\item Este ponto ${p}$ é processado de acordo com o algoritmo \acrshort{DBSCAN} e o próximo ponto é tomado.
+	\item O ponto ${p}$ é processado de acordo com o algoritmo \acrshort{DBSCAN} e o próximo ponto é tomado.
 	\item A função BuscarVizinhos(p, Ep1, Ep2) recupera todos os pontos que tem uma distância menor que Eps1 e Eps2 para o ponto ${p}$. Se os pontos recuperados não podem ser alcançados o ponto é atribuído como ruído, onde o ponto selecionado não tem vizinhos suficientes para ser armazenado em grupo.
 	\item Os pontos marcados como ruído podem ser alterados posteriormente, se não forem diretamente alcançáveis pela densidade, mas eles são alcançáveis por densidade de algum outro ponto do banco de dados. Isso acontece para pontos de borda de um grupo.
 	\item Se o ponto selecionado tiver vizinhos suficientes dentro das distâncias Eps1 e Eps2 - se for um ponto central, então um novo grupo será construído.
-	\item Todos os vizinhos diretamente atingíveis por densidade desse ponto central também são incluídos.
+	\item Todos os vizinhos atingíveis por densidade desse ponto central também são incluídos.
 	\item O algoritmo reúne iterativamente pontos acessíveis por densidade a partir desse ponto central usando uma pilha.
 	\item Se o objeto não estiver marcado como ruído ou não estiver em um grupo e a diferença entre o valor médio do grupo e o novo valor é menor do que o valor limite para incluir em um grupo, ${\Delta E}$, ele é colocado no grupo atual.
 	\item Se dois grupos ${C_1}$ e ${C_2}$ estão muito próximos um do outro, um ponto ${p}$ pode pertencer a ambos ${C_1}$ e ${C_2}$. Então o ponto ${p}$ é atribuído ao grupo que foi descoberto primeiro.
@@ -706,7 +710,7 @@ Os indivíduos podem ser representados atráves de uma entrada de dados, que con
 
 \begin{table}[!ht]
 	\centering
-	\Caption{\label{tab:label_da_tabela} \acrshort{IGN} Dinâmico - Estrada de dados}
+	\Caption{\label{tab:label_da_tabela} \acrshort{IGN} Dinâmico - Entrada de dados}
 	\UECEtab{}{
 		\begin{tabular}{c c c c c c c c}
 			\toprule

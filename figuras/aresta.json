@@ -1,0 +1,17 @@
+{
+  "metadata": {...},
+  "binding": {...},
+  "data": {
+    ...
+    "edge": {
+      "elements": {
+        "1": {"ini": "2014-01-02 19:00:07", "fim": null},
+      },
+      "temporalfields": {
+        "origemdestino": {
+          "1": [{"time": "2014-01-02 19:00:07","data": {"origem": 1,"destino": 2}}]
+        }
+      }
+    }
+  }
+}

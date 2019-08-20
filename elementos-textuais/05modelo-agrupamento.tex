@@ -1,5 +1,5 @@
-\chapter{Modelos de agrupamento e previsão em redes dinâmicas}
-\label{chap:modelo-agrupamento}
+%\chapter{Aplicação dos Modelos de Agrupamento e Previsão em Redes Dinâmicas}
+%\label{chap:modelo-agrupamento}
 
 \section{Modelo de agrupamento ST-DBSCAN}
 O modelo de agrupamento \acrshort{ST-DBSCAN} indica a formação de grupos analisando ${s}$ semanas, onde ${s}$ é configurável na aplicação, e os exibindo de acordo com a semana selecionada. Ele detecta grupos principalmente em relação à distância máxima entre os pontos no mesmo grupo e as ${s}$ semanas em análise, como demonstrado na seção \ref{stdbscan}.
@@ -21,10 +21,10 @@ O modelo \acrshort{ST-IGN} leva em consideração as mesmas semanas analisadas q
 
 A separação dos grupos segue um critério de corte pré-estabelecido. Segundo \cite{simposioNeg2003}, um critério de separação deve ser inserido após uma indecidibilidade quanto à naturalidade dos grupos encontrados. Isso acontece quando a dispersão dos indivíduos está muito próxima de dois grupos naturais, confundindo com as distâncias internas entre elementos de cada grupo, resultando em que os grupos naturais sejam unidos num só grupo. Essa grande quantidade de indivíduos num grupo acarreta outro problema. Esta anomalia aparece por exemplo quando alguns dos casos de endemias na base de dados estão tão próximos (menos de 1 metro) que faz com que a função de custo da \acrshort{AGM} indique o corte nestes pontos. E com isso, praticamente descarta quase todos os pontos do grupo.
 
-Para minimizar esse problema com grande quantidade de dados num só grupo, o modelo \acrshort{ST-IGN} implementado armazena todos os resultados da funcão de custo da \acrshort{AGM}, que indica a posição dos grupos naturais, e caso este número de cortes indique mais de que 70\% de remoção de arestas, então o número anterior encontrado é utilizado. Esse processo é feito até que a condição seja satisfeita. A figura \ref{fig:agm} exibe um exemplo da \acrshort{AGM} gerada inicialmente pelo algoritmo \acrshort{ST-IGN}.
-
+Para minimizar esse problema com grande quantidade de dados num só grupo, o modelo \acrshort{ST-IGN} implementado armazena todos os resultados da funcão de custo da \acrshort{AGM}, que indica a posição dos grupos naturais, e caso este número de cortes indique mais de que ${C}$\% de remoção de arestas, então o número anterior encontrado é utilizado, e esse processo é feito até que a condição seja satisfeita. Foi estabelecido para o número ${C}$ o valor 70 após testes no algoritmo, onde o objetivo era encontrar o máximo de grupos após o corte determinado pela função de custo.
 
 Foram observados nos testes do algoritmo sobre os conjuntos de dados desta dissertação, que quanto menor a distância máxima entre os casos humanos, até um certo valor, maior é a quantidade de grupos encontrados sem ocorrer o problema anterior apresentado, pois no primeiro passo do algoritmo, que é encontrar a \acrshort{AGM}, alguns subgrupos menores já são formados.
+A figura \ref{fig:agm} exibe um exemplo da \acrshort{AGM} gerada inicialmente pelo algoritmo \acrshort{ST-IGN}.
 
 \begin{figure}[!ht]
 	\centering	

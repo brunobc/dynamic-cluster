@@ -501,7 +501,7 @@
 }
 
 \newcommand{\preambulodissertacao}{
-	Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimirprogramamestrado\ do \imprimircentro\ da \imprimiries \ e do Instituto Federal de Educação, Ciência e Tecnologia do Ceará, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. Área de Concentração: \imprimirareadeconcentracaomestrado \\
+	Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimircentro\ da \imprimiries \ e do Instituto Federal de Educação, Ciência e Tecnologia do Ceará, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. Área de Concentração: \imprimirareadeconcentracaomestrado \\
 }
 
 \newcommand{\preambulotccgraduacao}{
@@ -861,7 +861,11 @@
 	% Membro Quatro da banca pode ser o coorientador ou outro membro
 	\ifnotempty{\imprimirmembrodabancaquatro}{
 		\assinatura{\imprimirmembrodabancaquatro \\ \imprimirmembrodabancaquatroies}
-	}	
+	}
+	
+	\ifnotempty{\imprimirmembrodabancacinco}{
+	    \assinatura{\imprimirmembrodabancacinco \\ \imprimirmembrodabancacincoies}
+	}
 	
 	\pagebreak
 }
