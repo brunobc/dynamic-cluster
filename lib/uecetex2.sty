@@ -870,6 +870,12 @@
 	\pagebreak
 }
 
+\newcommand{\imprimirfolhadeaprovacaodissertacaopdf}[1]{%
+	\ifthenelse{\boolean{uecetex2@ehqualificacao}}{}{%
+		\includepdf[pages=1]{#1} %
+	}%
+}
+
 \newcommand{\imprimirfolhadeaprovacaotcc}{
 
 	\begin{center}
@@ -931,7 +937,8 @@
 
 \newcommand{\imprimirfolhadeaprovacao}{
 	\ifthenelse{\boolean{uecetex2@ehdissertacao}}{ %
-    	\imprimirfolhadeaprovacaodissertacao %	
+    	% \imprimirfolhadeaprovacaodissertacao %
+    	\imprimirfolhadeaprovacaodissertacaopdf
     }{
     	\ifthenelse{\boolean{uecetex2@ehtese}}{ %
     		\imprimirfolhadeaprovacaotese	 %

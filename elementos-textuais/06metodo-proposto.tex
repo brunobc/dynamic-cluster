@@ -1,6 +1,5 @@
 \chapter{Uma Solução e sua Aplicação na Previsão de Dengue e Chikungunya em Fortaleza/CE}
 \label{chap:avaliacao}
-% http://www.ppgia.pucpr.br/~fabricio/ftp/Aulas/Mestrado/IA/Nievola/MD/MD-06-Agrupamento.pdf
 
 Este capítulo apresenta a metodologia computacional empregada nesta pesquisa, que permite orquestrar os dados espaço-temporais provenientes de bases de dados (\acrshort{SIMDA} - \cite{simda} e WebDengue - \cite{webdengue2011}) para o Armazém de Dados (\acrshort{DW} - \textit{\acrlong{DW}}) e tratá-los de modo a se tornarem informação e recursos de tomada de decisão com os modelos de agrupamento dinâmico através do Dynagraph. Em seguida, trata-se dos resultados obtidos com os modelos de previsão estudados usando os algoritmos \acrshort{ST-DBSCAN} e \acrshort{ST-IGN}.
 
@@ -19,7 +18,7 @@ A figura \ref{fig:sad} apresenta a representação do modelo metodológico (meto
 \end{figure}
 \FloatBarrier
 
-O SAD apresentado na figura \ref{fig:metodologia} mostra um Armazém de Dados composto de um \acrfull{BD-SQL} (\acrfull{SQL}) onde são colocadas as informações dos casos, conforme figura \ref{fig:jsondynagraphVertex}, e o visualizador e editor Dynagraph que permite transformar tais dados em informações úteis no espaço-tempo, como é mostrado nas figuras \ref{fig:jsondynagraphVertex}, \ref{fig:jsondynagraphAresta} e \ref{fig:edCaMenu}.
+O SAD apresentado na figura \ref{fig:metodologia} mostra um Armazém de Dados (\acrlong{DW}) composto de um \acrfull{BD-SQL} (\acrfull{SQL}) onde são colocadas as informações dos casos, conforme figura \ref{fig:jsondynagraphVertex}, e o visualizador e editor Dynagraph que permite transformar tais dados em informações úteis no espaço-tempo, como é mostrado nas figuras \ref{fig:jsondynagraphVertex}, \ref{fig:jsondynagraphAresta} e \ref{fig:edCaMenu}.
 
 O banco de dados é alimentado através de um sistema, por exemplo SIMDA e WebDengue, e determinado por um especialista. Para compor uma solução adequada, outro especialista decide o modelo de previsão espaço-temporal baseado no banco de dados e os parâmetros de entrada do modelo. Com isso, uma solução é fornecida ao Dynagraph, que visualiza no espaço-tempo os grupos de previsão. E finalmente, com as informações geradas pelo Armazém de Dados, outro especialista em tomada de decisão determina onde os agentes de saúde devem atuar para um combate mais efetivo às endemias.
 
@@ -59,7 +58,7 @@ Foram implementados gráficos de séries temporais que são usados para examinar
 
 \section{Comparação de predições baseadas em grupos previamente formados}
 
-As figuras \ref{fig:metricasDengue201745001}, \ref{fig:metricasDengue201845001}, \ref{fig:metricasChi201745001} e \ref{fig:metricasChi201845001} apresentam gráficos sobre as ocorrências de casos humanos de dengue e chikungunya reportados em \cite{simda} no município de Fortaleza, nos anos de 2017 e 2018, levando em consideração as 4 semanas anteriores à semana do grupo de previsão. A variável Eps de agregação do \acrshort{ST-DBSCAN} é de 500 metros (Eps=500) e para caracterizar um grupo se considera pelo menos 2 casos humanos (MinPts=2).
+As figuras \ref{fig:metricasDengue201745001}, \ref{fig:metricasDengue201845001}, \ref{fig:metricasChi201745001} e \ref{fig:metricasChi201845001} apresentam gráficos sobre as ocorrências de casos humanos de dengue e chikungunya reportados em \citeonline{simda} no município de Fortaleza, nos anos de 2017 e 2018, levando em consideração as 4 semanas anteriores à semana do grupo de previsão. A variável Eps de agregação do \acrshort{ST-DBSCAN} é de 500 metros (Eps=500) e para caracterizar um grupo se considera pelo menos 2 casos humanos (MinPts=2).
 As legendas indicam três tipos:
 \begin{itemize}
     \item número de casos dentro de algum grupo de previsão, representado pela cor verde;
@@ -143,7 +142,7 @@ Dado o número baixo de casos humanos de chikungunya em 2018 em Fortaleza-CE, so
 \end{figure}
 \FloatBarrier
 
-Outra forma de exibir os resultados das figuras anteriores é na forma de gráfico de colunas empilhadas, apresentados na seção \ref{ap:stdbscan}.
+Outra forma de exibir os resultados das figuras anteriores é na forma de gráfico de colunas empilhadas, apresentados no apêndice \ref{ap:graphicColBar} na seção \ref{ap:stdbscan}.
 
 Devido aos problemas descritos na seção \ref{sec:modelo-st-ign} foram realizados diversos testes do ST-IGN variando o valor da distância máxima entre dois pontos. A pesquisa \cite{Salje2017} revela que a infecção do vírus da dengue acontece comumente em uma região próxima entre os casos analisados, onde 60\% dos casos de dengue que vivem a menos de 200 metros de distância são da mesma cadeia de transmissão, em oposição a 3\% dos casos separados por 1 a 5 quilômetros. Baseado nisso e nos resultados dos testes do ST-IGN, estabeleceu-se como distância máxima entre dois pontos o valor de 250 metros, a fim de encontrar o máximo de grupos formados pelo algoritmo.
 
@@ -176,9 +175,9 @@ Já a figura \ref{fig:metricasChi201742501IGN} apresenta uma grande quantidade d
 \FloatBarrier
 
 Os resultados das figuras anteriores são exibidos na forma de gráfico de colunas empilhadas na seção \ref{ap:stign} do apêndice \ref{ap:graphicColBar}. 
-Os resultados de chikungunya em 2018 foram praticamente nulos devido à baixa quantidade de casos, como mostra a figura \ref{fig:metricasChi201842501IGN}.
+Os resultados de chikungunya em 2018 foram praticamente nulos devido à baixa quantidade de casos, como mostra a figura \ref{fig:metricasChi201842501IGN}, apêndice \ref{ap:graphicColBar}, seção \ref{ap:stign}.
 
-
+As figuras \ref{fig:metricasDengueBar201745001}, \ref{fig:metricasDengueBar201845001}, \ref{fig:metricasChi201745002}, \ref{fig:metricasChi201742502}, \ref{fig:metricasChi201742502IGN}, \ref{fig:metricasDen201742502IGN} e \ref{fig:metricasDen201842502IGN} mostras os resultados dos testes restantes ao longo do ano para Dengue e Chikungunya, 2017 e 2018.
 
 \subsection{Comparação dos resultados: ST-DBSCAN e ST-IGN}
 
@@ -261,7 +260,7 @@ Uma das vantagens apresentadas pelo método ST-IGN sobre o \acrshort{ST-DBSCAN} 
 
 
 % Resultados:
-As figuras \ref{fig:stdbscan2019dengue250} e \ref{fig:stdbscan2019chi250} apresentam gráficos sobre as ocorrências de casos humanos de dengue reportados em \cite{simda} no município de Fortaleza, no ano de 2019, levando em consideração as 4 semanas anteriores à semana do grupo de previsão. A variável Eps de agregação do \acrshort{ST-DBSCAN} e ST-IGN é de 250 metros e para caracterizar um grupo se considera pelo menos 2 casos humanos. A cor verde nos gráficos representa os casos dentro dos grupos de previsão e azul os casos fora. As ocorrências de casos de chikungunya em 2019 não foram significativas para analisar grupos de previsão espaço-temporal. Este resultado se assemelha as ocorrências de chikungunya em 2018 pelo número baixo de incidência de casos confirmados. A \ref{tab:casos} exibe o total de casos de dengue e chikungunya entre 2016 e até julho de 2019
+As figuras \ref{fig:stdbscan2019dengue250} e \ref{fig:stdbscan2019chi250} apresentam gráficos sobre as ocorrências de casos humanos de dengue reportados em \cite{simda} no município de Fortaleza, no ano de 2019, levando em consideração as 4 semanas anteriores à semana do grupo de previsão. A variável Eps de agregação do \acrshort{ST-DBSCAN} e ST-IGN é de 250 metros e para caracterizar um grupo se considera pelo menos 2 casos humanos. A cor verde nos gráficos representa os casos dentro dos grupos de previsão e azul os casos fora. As ocorrências de casos de chikungunya em 2019 não foram significativas para analisar grupos de previsão espaço-temporal. Este resultado se assemelha as ocorrências de chikungunya em 2018 aqui exibidos pelo número baixo de incidência de casos confirmados. A \ref{tab:casos} exibe o total de casos de dengue e chikungunya entre 2016 e até julho de 2019
 
 \begin{table}[ht!]	
 	\centering

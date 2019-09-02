@@ -1,4 +1,4 @@
-\chapter{Conceitos e Métodos de Agrupamento}
+\chapter{Referencial Teórico: Conceitos e Métodos de Agrupamento}
 \label{chap:estadodaarte}
 
 Uma visão geral sobre agrupamentos é apresentada na seção \ref{agrupamentos}. Nas seções \ref{sub:ign} e \ref{dbscan} apresentam-se os algoritmos \acrshort{IGN} e \acrshort{DBSCAN} em detalhes e suas características. A seção \ref{stdbscan} apresenta o \acrshort{ST-DBSCAN} e a seção \ref{stign} apresenta o \acrshort{ST-IGN}, que são utilizada nesta pesquisa para auxiliar o método de previsão dinâmica. Na seção \ref{chap:redes-dinamicas} discutem-se redes dinâmicas e exibe-se o modelo Dynagraph e um editor de características. A seção \ref{sec:trabalhos-relacionados} define e apresenta os trabalhos relacionados ao problema de agrupamentos dinâmicos.
@@ -75,7 +75,7 @@ Descrevem-se, a seguir, alguns dos algoritmos de agrupamento. Pelo menos um repr
 \end{itemize}
 
 \subsection{Agrupamentos K-Médias}
-O algoritmo de agrupamento k-médias é uma das técnicas mais conhecidas dessa abordagem e foi introduzido por \cite{Macqueen67}. Ele utiliza a média dos objetos que são do grupo em questão, também conhecido como centro geométrico do grupo. A ideia principal neste algoritmo é usar a média geométrica dos objetos para atribuí-los a grupos e também usá-los para  representá-los.
+O algoritmo de agrupamento k-médias é uma das técnicas mais conhecidas dessa abordagem e foi introduzido por \citeautoronline{Macqueen67}. Ele utiliza a média dos objetos que são do grupo em questão, também conhecido como centro geométrico do grupo. A ideia principal neste algoritmo é usar a média geométrica dos objetos para atribuí-los a grupos e também usá-los para  representá-los.
 K-médias é um algoritmo de agrupamento que garante a convergência para um ótimo local, mas não necessariamente um ótimo global. À medida que ${K}$ aumenta, o custo de encontrar a solução ótima diminui, e atinge seu mínimo quando ${K}$ é igual ao número de objetos \cite{Wu2008}. Especificamente, o procedimento é mostrado abaixo:
  \begin{enumerate}
 	\item Inserir os objetos para serem agrupados e também o número ${K}$ de grupos desejados.
@@ -567,7 +567,7 @@ As figuras \ref{fig:dbscanStep1}, \ref{fig:dbscanStep2} e \ref{fig:dbscanStep3} 
 Em processos de agrupamento é muito importante a detecção dos \textit{outliers}, uma vez que estes objetos podem deturpar o processo de classificação de forma muito danosa. Deve-se pois considerar também que vários dos métodos de agrupamentos naturais servem também como bons detectores de \textit{outliers}, no entanto as características destes indivíduos podem ser muito relevantes para a separação completa dos demais que têm similaridades características de cada um dos grupos a que pertencem.
 
 %Outlier x Ruídos
-Uma questão a se considerar é a diferença entre o significado de \textit{outlier} e ruído. Enquanto ruído refere-se à modificação de valores originais, os \textit{outliers} contêm informações importantes para a descricão do conjunto de dados \cite{chandola2009}. Ruído é uma anomalia indesejada no dado causada por imprecisão nos atributos de entrada, erro ao rotular os dados ou até por atributos de dados que foram excluídos, mas afetam a rotulação \cite{alpaydin2010}.
+Uma questão a se considerar é a diferença entre o significado de \textit{outlier} e ruído. Enquanto ruído refere-se à modificação de valores originais, os \textit{outliers} contêm informações importantes para a descricão do conjunto de dados \cite{chandola2009}. Ruído é uma anomalia indesejada no dado causada por imprecisão nos atributos de entrada, erro ao rotular os dados ou até por atributos de dados que foram excluídos \cite{alpaydin2010}.
 
 A detecção de \textit{outliers} refere-se ao problema de encontrar padrões que exibem um comportamento diferenciado em relação à maioria dos dados \cite{chandola2009}. Caracterizar o processo de detecção de ruídos e \textit{outliers} é muito importante, pois permite a redução de prejuízos e uma melhor análise dos dados. As técnicas de detecção \textit{outlier} têm sido aplicadas a um grande número de aplicações tais como: detecção de fraudes, processamento de imagens, detecção de intrusão, medicina e detecção de dados rotulados incorretamente.
 
@@ -799,7 +799,7 @@ A figura \ref{fig:ign_avaliar_rotular} apresenta o processo de rotulação do pr
 \end{figure}
 
 \section{Detecção de \textit{outliers} espaço-temporais}
-\textit{Outliers} são tradicionalmente definidos como instâncias que são notavelmente diferentes da maioria das instâncias no conjunto de dados. Em aplicações espaço-temporais, detectar \textit{outliers} ajuda a identificar fenômenos interessantes, mas raros, por exemplo, uma trajetória irregular tomada por um veículo de táxi ou a mudança das frequências de inundações e secas em determinadas áreas devido a mudanças climáticas ou ações humanas que mudam a ecologia de uma região \cite{Atluri:2018}.
+\textit{Outliers} são tradicionalmente definidos como instâncias que são notavelmente diferentes da maioria das instâncias no conjunto de dados. Em aplicações espaço-temporais, detectá-los ajuda a identificar fenômenos interessantes, mas raros, por exemplo, uma trajetória irregular tomada por um veículo de táxi ou a mudança das frequências de inundações e secas em determinadas áreas devido a mudanças climáticas ou ações humanas que mudam a ecologia de uma região \cite{Atluri:2018}.
 
 A diferença entre a detecção de agrupamento e de detecção de \textit{outliers} é que, enquanto a detecção de \textit{outliers} tipicamente concentra-se em pontos de dados individuais e verifica se cada ponto é \textit{outlier}, a detecção de agrupamento se concentra em encontrar grupos ou padrões que são \textit{outliers} espaciais \cite{DanielNeill2006}.
 
